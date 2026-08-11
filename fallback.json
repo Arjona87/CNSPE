@@ -1,0 +1,3281 @@
+{
+  "series": {
+    "personal_adscrito_total": {
+      "id": "personal_adscrito_total",
+      "grupo": "personal_adscrito",
+      "grupoLabel": "Personal adscrito a las instituciones de seguridad pública estatal",
+      "seccion": "estructura",
+      "etiqueta": "Nacional Total (GN + Estatales)",
+      "rol": "nacional_total",
+      "unidad": "personas",
+      "filaSheet": 4,
+      "valores": {
+        "2021": 321967,
+        "2022": 321676,
+        "2023": 338563,
+        "2024": 362100,
+        "2025": 283204,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 321967,
+        "2022": 321676,
+        "2023": 338563,
+        "2024": 362100,
+        "2025": 283204,
+        "2026": null
+      }
+    },
+    "personal_adscrito_gn": {
+      "id": "personal_adscrito_gn",
+      "grupo": "personal_adscrito",
+      "grupoLabel": "Personal adscrito a las instituciones de seguridad pública estatal",
+      "seccion": "estructura",
+      "etiqueta": "Nacional - Guardia Nacional",
+      "rol": "nacional_gn",
+      "unidad": "personas",
+      "filaSheet": 5,
+      "valores": {
+        "2021": 96391,
+        "2022": 100365,
+        "2023": 104240,
+        "2024": 126236,
+        "2025": 132036,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 96391,
+        "2022": 100365,
+        "2023": 104240,
+        "2024": 126236,
+        "2025": 132036,
+        "2026": null
+      }
+    },
+    "personal_adscrito_estatales": {
+      "id": "personal_adscrito_estatales",
+      "grupo": "personal_adscrito",
+      "grupoLabel": "Personal adscrito a las instituciones de seguridad pública estatal",
+      "seccion": "estructura",
+      "etiqueta": "Nacional - Estatales",
+      "rol": "nacional_estatales",
+      "unidad": "personas",
+      "filaSheet": 6,
+      "valores": {
+        "2021": 225576,
+        "2022": 221311,
+        "2023": 234323,
+        "2024": 235864,
+        "2025": 151168,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 225576,
+        "2022": 221311,
+        "2023": 234323,
+        "2024": 235864,
+        "2025": 151168,
+        "2026": null
+      }
+    },
+    "personal_adscrito_jalisco": {
+      "id": "personal_adscrito_jalisco",
+      "grupo": "personal_adscrito",
+      "grupoLabel": "Personal adscrito a las instituciones de seguridad pública estatal",
+      "seccion": "estructura",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 7,
+      "valores": {
+        "2021": 4940,
+        "2022": 5818,
+        "2023": 6195,
+        "2024": 6281,
+        "2025": 6031,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 4940,
+        "2022": 5818,
+        "2023": 6195,
+        "2024": 6281,
+        "2025": 6031,
+        "2026": null
+      }
+    },
+    "tasa_preventiva_nacional": {
+      "id": "tasa_preventiva_nacional",
+      "grupo": "tasa_preventiva",
+      "grupoLabel": "Tasa de elementos de la policía preventiva por cada 1,000 hab.",
+      "seccion": "estructura",
+      "etiqueta": "Nacional",
+      "rol": "nacional",
+      "unidad": "tasa",
+      "filaSheet": 9,
+      "valores": {
+        "2021": 0.9,
+        "2022": 0.9,
+        "2023": 0.9,
+        "2024": 0.9,
+        "2025": 1,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0.9,
+        "2022": 0.9,
+        "2023": 0.9,
+        "2024": 0.9,
+        "2025": 1,
+        "2026": null
+      }
+    },
+    "tasa_preventiva_jalisco": {
+      "id": "tasa_preventiva_jalisco",
+      "grupo": "tasa_preventiva",
+      "grupoLabel": "Tasa de elementos de la policía preventiva por cada 1,000 hab.",
+      "seccion": "estructura",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "tasa",
+      "filaSheet": 10,
+      "valores": {
+        "2021": 0.3,
+        "2022": 0.3,
+        "2023": 0.3,
+        "2024": 0.3,
+        "2025": 0.7,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0.3,
+        "2022": 0.3,
+        "2023": 0.3,
+        "2024": 0.3,
+        "2025": 0.7,
+        "2026": null
+      }
+    },
+    "funcion_total__nacional": {
+      "id": "funcion_total__nacional",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 12,
+      "valores": {
+        "2021": 110929,
+        "2022": 174536,
+        "2023": 174455,
+        "2024": 182398,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 110929,
+        "2022": 174536,
+        "2023": 174455,
+        "2024": 182398,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "funcion_total__jalisco": {
+      "id": "funcion_total__jalisco",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 12,
+      "valores": {
+        "2021": 2595,
+        "2022": 2274,
+        "2023": 2482,
+        "2024": 4346,
+        "2025": 6031,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 2595,
+        "2022": 2274,
+        "2023": 2482,
+        "2024": 4346,
+        "2025": 6031,
+        "2026": null
+      }
+    },
+    "funcion_transito__nacional": {
+      "id": "funcion_transito__nacional",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Policía de tránsito, movilidad y seguridad vial",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 13,
+      "valores": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": 10427,
+        "2025": 8016,
+        "2026": null
+      },
+      "crudos": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": 10427,
+        "2025": 8016,
+        "2026": null
+      }
+    },
+    "funcion_transito__jalisco": {
+      "id": "funcion_transito__jalisco",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Policía de tránsito, movilidad y seguridad vial",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 13,
+      "valores": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "funcion_prevencion__nacional": {
+      "id": "funcion_prevencion__nacional",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Prevención",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 14,
+      "valores": {
+        "2021": 67292,
+        "2022": 64424,
+        "2023": 69747,
+        "2024": 73776,
+        "2025": 72258,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 67292,
+        "2022": 64424,
+        "2023": 69747,
+        "2024": 73776,
+        "2025": 72258,
+        "2026": null
+      }
+    },
+    "funcion_prevencion__jalisco": {
+      "id": "funcion_prevencion__jalisco",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Prevención",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 14,
+      "valores": {
+        "2021": 2595,
+        "2022": 2274,
+        "2023": 2482,
+        "2024": 4346,
+        "2025": 6031,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 2595,
+        "2022": 2274,
+        "2023": 2482,
+        "2024": 4346,
+        "2025": 6031,
+        "2026": null
+      }
+    },
+    "funcion_proximidad__nacional": {
+      "id": "funcion_proximidad__nacional",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Proximidad social",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 15,
+      "valores": {
+        "2021": 25737,
+        "2022": 90425,
+        "2023": 84429,
+        "2024": 82874,
+        "2025": 12698,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 25737,
+        "2022": 90425,
+        "2023": 84429,
+        "2024": 82874,
+        "2025": 12698,
+        "2026": null
+      }
+    },
+    "funcion_proximidad__jalisco": {
+      "id": "funcion_proximidad__jalisco",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Proximidad social",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 15,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": null
+      }
+    },
+    "funcion_reaccion__nacional": {
+      "id": "funcion_reaccion__nacional",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Reacción",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 16,
+      "valores": {
+        "2021": 14709,
+        "2022": 15582,
+        "2023": 16663,
+        "2024": 22496,
+        "2025": 13303,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 14709,
+        "2022": 15582,
+        "2023": 16663,
+        "2024": 22496,
+        "2025": 13303,
+        "2026": null
+      }
+    },
+    "funcion_reaccion__jalisco": {
+      "id": "funcion_reaccion__jalisco",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Reacción",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 16,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": null
+      }
+    },
+    "funcion_investigacion__nacional": {
+      "id": "funcion_investigacion__nacional",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Investigación",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 17,
+      "valores": {
+        "2021": 3191,
+        "2022": 4105,
+        "2023": 3616,
+        "2024": 3252,
+        "2025": 3175,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 3191,
+        "2022": 4105,
+        "2023": 3616,
+        "2024": 3252,
+        "2025": 3175,
+        "2026": null
+      }
+    },
+    "funcion_investigacion__jalisco": {
+      "id": "funcion_investigacion__jalisco",
+      "grupo": "personal_por_funcion",
+      "grupoLabel": "Personal de las corporaciones policiales, por función",
+      "seccion": "estructura",
+      "etiqueta": "Investigación",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 17,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": null
+      }
+    },
+    "cup_total__nacional": {
+      "id": "cup_total__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 19,
+      "valores": {
+        "2021": 99015,
+        "2022": 65286,
+        "2023": 101652,
+        "2024": 61278,
+        "2025": 67501,
+        "2026": 67501
+      },
+      "crudos": {
+        "2021": 99015,
+        "2022": 65286,
+        "2023": 101652,
+        "2024": 61278,
+        "2025": 67501,
+        "2026": 67501
+      }
+    },
+    "cup_total__jalisco": {
+      "id": "cup_total__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 19,
+      "valores": {
+        "2021": 3162,
+        "2022": 3569,
+        "2023": 3441,
+        "2024": 3964,
+        "2025": 5124,
+        "2026": 5124
+      },
+      "crudos": {
+        "2021": 3162,
+        "2022": 3569,
+        "2023": 3441,
+        "2024": 3964,
+        "2025": 5124,
+        "2026": 5124
+      }
+    },
+    "cup_gn__nacional": {
+      "id": "cup_gn__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Guardia Nacional",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 20,
+      "valores": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": 116095,
+        "2026": 116095
+      },
+      "crudos": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": 116095,
+        "2026": 116095
+      }
+    },
+    "cup_gn__jalisco": {
+      "id": "cup_gn__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Guardia Nacional",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 20,
+      "valores": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": null,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_preventiva__nacional": {
+      "id": "cup_preventiva__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía preventiva",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 21,
+      "valores": {
+        "2021": 51546,
+        "2022": 57390,
+        "2023": 85720,
+        "2024": 55563,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 51546,
+        "2022": 57390,
+        "2023": 85720,
+        "2024": 55563,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_preventiva__jalisco": {
+      "id": "cup_preventiva__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía preventiva",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 21,
+      "valores": {
+        "2021": 1777,
+        "2022": 2073,
+        "2023": 2027,
+        "2024": 2295,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 1777,
+        "2022": 2073,
+        "2023": 2027,
+        "2024": 2295,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_transito__nacional": {
+      "id": "cup_transito__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía de tránsito",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 22,
+      "valores": {
+        "2021": 5135,
+        "2022": 3650,
+        "2023": 6661,
+        "2024": 3122,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 5135,
+        "2022": 3650,
+        "2023": 6661,
+        "2024": 3122,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_transito__jalisco": {
+      "id": "cup_transito__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía de tránsito",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 22,
+      "valores": {
+        "2021": 1385,
+        "2022": 1496,
+        "2023": 1414,
+        "2024": 1669,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 1385,
+        "2022": 1496,
+        "2023": 1414,
+        "2024": 1669,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_bancaria__nacional": {
+      "id": "cup_bancaria__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía bancaria, comercial y/o auxiliar",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 23,
+      "valores": {
+        "2021": 25909,
+        "2022": 2582,
+        "2023": 5398,
+        "2024": 1254,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 25909,
+        "2022": 2582,
+        "2023": 5398,
+        "2024": 1254,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_bancaria__jalisco": {
+      "id": "cup_bancaria__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía bancaria, comercial y/o auxiliar",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 23,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_cibernetica__nacional": {
+      "id": "cup_cibernetica__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía cibernética",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 24,
+      "valores": {
+        "2021": 83,
+        "2022": null,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 83,
+        "2022": "N/A",
+        "2023": "N/A",
+        "2024": "N/A",
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_cibernetica__jalisco": {
+      "id": "cup_cibernetica__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Policía cibernética",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 24,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": "N/A",
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_otro__nacional": {
+      "id": "cup_otro__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Otro tipo de corporación policial",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 25,
+      "valores": {
+        "2021": 2448,
+        "2022": 1664,
+        "2023": 2202,
+        "2024": 1339,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 2448,
+        "2022": 1664,
+        "2023": 2202,
+        "2024": 1339,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_otro__jalisco": {
+      "id": "cup_otro__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "Otro tipo de corporación policial",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 25,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_no_especificado__nacional": {
+      "id": "cup_no_especificado__nacional",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "No especificado",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 26,
+      "valores": {
+        "2021": 13894,
+        "2022": null,
+        "2023": 1671,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 13894,
+        "2022": "N/A",
+        "2023": 1671,
+        "2024": "N/A",
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "cup_no_especificado__jalisco": {
+      "id": "cup_no_especificado__jalisco",
+      "grupo": "cup",
+      "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+      "seccion": "estructura",
+      "etiqueta": "No especificado",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 26,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": "N/A",
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "fallecido_total__nacional": {
+      "id": "fallecido_total__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 28,
+      "valores": {
+        "2021": 1449,
+        "2022": 945,
+        "2023": 522,
+        "2024": 603,
+        "2025": 513,
+        "2026": 513
+      },
+      "crudos": {
+        "2021": 1449,
+        "2022": 945,
+        "2023": 522,
+        "2024": 603,
+        "2025": 513,
+        "2026": 513
+      }
+    },
+    "fallecido_total__jalisco": {
+      "id": "fallecido_total__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 28,
+      "valores": {
+        "2021": 34,
+        "2022": 30,
+        "2023": 7,
+        "2024": 8,
+        "2025": 18,
+        "2026": 18
+      },
+      "crudos": {
+        "2021": 34,
+        "2022": 30,
+        "2023": 7,
+        "2024": 8,
+        "2025": 18,
+        "2026": 18
+      }
+    },
+    "fallecido_naturales__nacional": {
+      "id": "fallecido_naturales__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Causas naturales",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 29,
+      "valores": {
+        "2021": 1194,
+        "2022": 728,
+        "2023": 236,
+        "2024": 313,
+        "2025": 252,
+        "2026": 252
+      },
+      "crudos": {
+        "2021": 1194,
+        "2022": 728,
+        "2023": 236,
+        "2024": 313,
+        "2025": 252,
+        "2026": 252
+      }
+    },
+    "fallecido_naturales__jalisco": {
+      "id": "fallecido_naturales__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Causas naturales",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 29,
+      "valores": {
+        "2021": 20,
+        "2022": 25,
+        "2023": 0,
+        "2024": 6,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 20,
+        "2022": 25,
+        "2023": 0,
+        "2024": 6,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "fallecido_doloso__nacional": {
+      "id": "fallecido_doloso__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Homicidio Doloso",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 30,
+      "valores": {
+        "2021": 103,
+        "2022": 96,
+        "2023": 69,
+        "2024": 81,
+        "2025": 99,
+        "2026": 99
+      },
+      "crudos": {
+        "2021": 103,
+        "2022": 96,
+        "2023": 69,
+        "2024": 81,
+        "2025": 99,
+        "2026": 99
+      }
+    },
+    "fallecido_doloso__jalisco": {
+      "id": "fallecido_doloso__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Homicidio Doloso",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 30,
+      "valores": {
+        "2021": 0,
+        "2022": 1,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 1,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "fallecido_culposo__nacional": {
+      "id": "fallecido_culposo__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Homicidio Culposo",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 31,
+      "valores": {
+        "2021": 6,
+        "2022": 5,
+        "2023": 5,
+        "2024": 2,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 6,
+        "2022": 5,
+        "2023": 5,
+        "2024": 2,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "fallecido_culposo__jalisco": {
+      "id": "fallecido_culposo__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Homicidio Culposo",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 31,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "fallecido_accidentes__nacional": {
+      "id": "fallecido_accidentes__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Accidentes",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 32,
+      "valores": {
+        "2021": 74,
+        "2022": 72,
+        "2023": 56,
+        "2024": 114,
+        "2025": 94,
+        "2026": 30
+      },
+      "crudos": {
+        "2021": 74,
+        "2022": 72,
+        "2023": 56,
+        "2024": 114,
+        "2025": 94,
+        "2026": 30
+      }
+    },
+    "fallecido_accidentes__jalisco": {
+      "id": "fallecido_accidentes__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Accidentes",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 32,
+      "valores": {
+        "2021": 0,
+        "2022": 1,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 1,
+        "2023": 0,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "fallecido_suicidio__nacional": {
+      "id": "fallecido_suicidio__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Suicidio",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 33,
+      "valores": {
+        "2021": 6,
+        "2022": 9,
+        "2023": 9,
+        "2024": 6,
+        "2025": 8,
+        "2026": 8
+      },
+      "crudos": {
+        "2021": 6,
+        "2022": 9,
+        "2023": 9,
+        "2024": 6,
+        "2025": 8,
+        "2026": 8
+      }
+    },
+    "fallecido_suicidio__jalisco": {
+      "id": "fallecido_suicidio__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Suicidio",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 33,
+      "valores": {
+        "2021": 0,
+        "2022": 3,
+        "2023": 0,
+        "2024": 1,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 3,
+        "2023": 0,
+        "2024": 1,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "fallecido_otras__nacional": {
+      "id": "fallecido_otras__nacional",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Otras causas externas",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 34,
+      "valores": {
+        "2021": 22,
+        "2022": 32,
+        "2023": 22,
+        "2024": 10,
+        "2025": 34,
+        "2026": 34
+      },
+      "crudos": {
+        "2021": 22,
+        "2022": 32,
+        "2023": 22,
+        "2024": 10,
+        "2025": 34,
+        "2026": 34
+      }
+    },
+    "fallecido_otras__jalisco": {
+      "id": "fallecido_otras__jalisco",
+      "grupo": "personal_fallecido",
+      "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+      "seccion": "estructura",
+      "etiqueta": "Otras causas externas",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 34,
+      "valores": {
+        "2021": 14,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 18,
+        "2026": 18
+      },
+      "crudos": {
+        "2021": 14,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 18,
+        "2026": 18
+      }
+    },
+    "condicion_lesionados__nacional": {
+      "id": "condicion_lesionados__nacional",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Lesionados",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 36,
+      "valores": {
+        "2021": null,
+        "2022": 1591,
+        "2023": 3102,
+        "2024": 2658,
+        "2025": 2645,
+        "2026": 2645
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 1591,
+        "2023": 3102,
+        "2024": 2658,
+        "2025": 2645,
+        "2026": 2645
+      }
+    },
+    "condicion_lesionados__jalisco": {
+      "id": "condicion_lesionados__jalisco",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Lesionados",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 36,
+      "valores": {
+        "2021": null,
+        "2022": 214,
+        "2023": 104,
+        "2024": 1,
+        "2025": 67,
+        "2026": 67
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 214,
+        "2023": 104,
+        "2024": 1,
+        "2025": 67,
+        "2026": 67
+      }
+    },
+    "condicion_desaparecidos__nacional": {
+      "id": "condicion_desaparecidos__nacional",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Desaparecidos",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 37,
+      "valores": {
+        "2021": null,
+        "2022": 5,
+        "2023": 4,
+        "2024": 8,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 5,
+        "2023": 4,
+        "2024": 8,
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "condicion_desaparecidos__jalisco": {
+      "id": "condicion_desaparecidos__jalisco",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Desaparecidos",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 37,
+      "valores": {
+        "2021": null,
+        "2022": 1,
+        "2023": null,
+        "2024": null,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 1,
+        "2023": "N/A",
+        "2024": "N/A",
+        "2025": "N/D",
+        "2026": "N/D"
+      }
+    },
+    "condicion_jubilados__nacional": {
+      "id": "condicion_jubilados__nacional",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Jubilados",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 38,
+      "valores": {
+        "2021": null,
+        "2022": 1695,
+        "2023": 1645,
+        "2024": 3421,
+        "2025": 1464,
+        "2026": 1464
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 1695,
+        "2023": 1645,
+        "2024": 3421,
+        "2025": 1464,
+        "2026": 1464
+      }
+    },
+    "condicion_jubilados__jalisco": {
+      "id": "condicion_jubilados__jalisco",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Jubilados",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 38,
+      "valores": {
+        "2021": null,
+        "2022": 220,
+        "2023": 196,
+        "2024": 210,
+        "2025": 204,
+        "2026": 204
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 220,
+        "2023": 196,
+        "2024": 210,
+        "2025": 204,
+        "2026": 204
+      }
+    },
+    "condicion_renuncio__nacional": {
+      "id": "condicion_renuncio__nacional",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Renunció",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 39,
+      "valores": {
+        "2021": null,
+        "2022": null,
+        "2023": 6246,
+        "2024": 7917,
+        "2025": 7699,
+        "2026": 7699
+      },
+      "crudos": {
+        "2021": null,
+        "2022": null,
+        "2023": 6246,
+        "2024": 7917,
+        "2025": 7699,
+        "2026": 7699
+      }
+    },
+    "condicion_renuncio__jalisco": {
+      "id": "condicion_renuncio__jalisco",
+      "grupo": "condicion_personal",
+      "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+      "seccion": "estructura",
+      "etiqueta": "Renunció",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 39,
+      "valores": {
+        "2021": null,
+        "2022": null,
+        "2023": 121,
+        "2024": 199,
+        "2025": 163,
+        "2026": 163
+      },
+      "crudos": {
+        "2021": null,
+        "2022": null,
+        "2023": 121,
+        "2024": 199,
+        "2025": 163,
+        "2026": 163
+      }
+    },
+    "presupuesto_nacional": {
+      "id": "presupuesto_nacional",
+      "grupo": "presupuesto",
+      "grupoLabel": "Presupuesto ejercido (millones de pesos)",
+      "seccion": "estructura",
+      "etiqueta": "Nacional",
+      "rol": "nacional",
+      "unidad": "mdp",
+      "filaSheet": 41,
+      "valores": {
+        "2021": 96571.4,
+        "2022": 93226,
+        "2023": 102958,
+        "2024": 113946,
+        "2025": 98571,
+        "2026": 98614
+      },
+      "crudos": {
+        "2021": 96571.4,
+        "2022": 93226,
+        "2023": 102958,
+        "2024": 113946,
+        "2025": 98571,
+        "2026": 98614
+      }
+    },
+    "presupuesto_jalisco": {
+      "id": "presupuesto_jalisco",
+      "grupo": "presupuesto",
+      "grupoLabel": "Presupuesto ejercido (millones de pesos)",
+      "seccion": "estructura",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "mdp",
+      "filaSheet": 42,
+      "valores": {
+        "2021": 4325.1,
+        "2022": 4334.2,
+        "2023": 4585.2,
+        "2024": 5147.6,
+        "2025": 5139,
+        "2026": 5138
+      },
+      "crudos": {
+        "2021": 4325.1,
+        "2022": 4334.2,
+        "2023": 4585.2,
+        "2024": 5147.6,
+        "2025": 5139,
+        "2026": 5138
+      }
+    },
+    "quejas_jalisco": {
+      "id": "quejas_jalisco",
+      "grupo": "quejas_ciudadanas",
+      "grupoLabel": "Quejas ciudadanas recibidas en Unidades de Asuntos Internos",
+      "seccion": "estructura",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "quejas",
+      "filaSheet": 45,
+      "valores": {
+        "2021": 175,
+        "2022": 145,
+        "2023": 182,
+        "2024": 233,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 175,
+        "2022": 145,
+        "2023": 182,
+        "2024": 233,
+        "2025": "N/A",
+        "2026": "N/A"
+      }
+    },
+    "infra_comandancias": {
+      "id": "infra_comandancias",
+      "grupo": "infraestructura",
+      "grupoLabel": "Infraestructura para la seguridad pública — Jalisco",
+      "seccion": "estructura",
+      "etiqueta": "Comandancias, estaciones y subestaciones",
+      "rol": "jalisco",
+      "unidad": "unidades",
+      "filaSheet": 47,
+      "valores": {
+        "2021": 4,
+        "2022": 3,
+        "2023": 3,
+        "2024": 3,
+        "2025": 3,
+        "2026": 3
+      },
+      "crudos": {
+        "2021": 4,
+        "2022": 3,
+        "2023": 3,
+        "2024": 3,
+        "2025": 3,
+        "2026": 3
+      }
+    },
+    "infra_cuarteles": {
+      "id": "infra_cuarteles",
+      "grupo": "infraestructura",
+      "grupoLabel": "Infraestructura para la seguridad pública — Jalisco",
+      "seccion": "estructura",
+      "etiqueta": "Cuarteles de policía",
+      "rol": "jalisco",
+      "unidad": "unidades",
+      "filaSheet": 48,
+      "valores": {
+        "2021": 7,
+        "2022": 16,
+        "2023": 16,
+        "2024": 16,
+        "2025": 16,
+        "2026": 16
+      },
+      "crudos": {
+        "2021": 7,
+        "2022": 16,
+        "2023": 16,
+        "2024": 16,
+        "2025": 16,
+        "2026": 16
+      }
+    },
+    "infra_modulos": {
+      "id": "infra_modulos",
+      "grupo": "infraestructura",
+      "grupoLabel": "Infraestructura para la seguridad pública — Jalisco",
+      "seccion": "estructura",
+      "etiqueta": "Módulos y casetas de policía",
+      "rol": "jalisco",
+      "unidad": "unidades",
+      "filaSheet": 49,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 7,
+        "2026": 7
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 0,
+        "2024": 0,
+        "2025": 7,
+        "2026": 7
+      }
+    },
+    "infra_camaras": {
+      "id": "infra_camaras",
+      "grupo": "infraestructura",
+      "grupoLabel": "Infraestructura para la seguridad pública — Jalisco",
+      "seccion": "estructura",
+      "etiqueta": "Cámaras de vigilancia",
+      "rol": "jalisco",
+      "unidad": "unidades",
+      "filaSheet": 50,
+      "valores": {
+        "2021": 5943,
+        "2022": null,
+        "2023": null,
+        "2024": 5056,
+        "2025": 5034,
+        "2026": 5034
+      },
+      "crudos": {
+        "2021": 5943,
+        "2022": "N/A",
+        "2023": "N/A",
+        "2024": 5056,
+        "2025": 5034,
+        "2026": 5034
+      }
+    },
+    "academias_sedes": {
+      "id": "academias_sedes",
+      "grupo": "academias",
+      "grupoLabel": "Academias o institutos de formación policial — Jalisco",
+      "seccion": "estructura",
+      "etiqueta": "Sedes o planteles",
+      "rol": "jalisco",
+      "unidad": "sedes",
+      "filaSheet": 53,
+      "valores": {
+        "2021": 1,
+        "2022": 1,
+        "2023": 1,
+        "2024": 1,
+        "2025": 1,
+        "2026": 1
+      },
+      "crudos": {
+        "2021": 1,
+        "2022": 1,
+        "2023": 1,
+        "2024": 1,
+        "2025": 1,
+        "2026": 1
+      }
+    },
+    "cadetes_ingreso_total__nacional": {
+      "id": "cadetes_ingreso_total__nacional",
+      "grupo": "cadetes_ingreso",
+      "grupoLabel": "Cadetes que ingresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 55,
+      "valores": {
+        "2021": 10771,
+        "2022": 14025,
+        "2023": 15474,
+        "2024": 13158,
+        "2025": 28480,
+        "2026": 28480
+      },
+      "crudos": {
+        "2021": 10771,
+        "2022": 14025,
+        "2023": 15474,
+        "2024": 13158,
+        "2025": 28480,
+        "2026": 28480
+      }
+    },
+    "cadetes_ingreso_total__jalisco": {
+      "id": "cadetes_ingreso_total__jalisco",
+      "grupo": "cadetes_ingreso",
+      "grupoLabel": "Cadetes que ingresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 55,
+      "valores": {
+        "2021": 132,
+        "2022": 453,
+        "2023": 551,
+        "2024": 208,
+        "2025": 280,
+        "2026": 280
+      },
+      "crudos": {
+        "2021": 132,
+        "2022": 453,
+        "2023": 551,
+        "2024": 208,
+        "2025": 280,
+        "2026": 280
+      }
+    },
+    "cadetes_ingreso_hombres__nacional": {
+      "id": "cadetes_ingreso_hombres__nacional",
+      "grupo": "cadetes_ingreso",
+      "grupoLabel": "Cadetes que ingresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Hombres",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 56,
+      "valores": {
+        "2021": 6976,
+        "2022": 9411,
+        "2023": 9687,
+        "2024": 8187,
+        "2025": 18974,
+        "2026": 18974
+      },
+      "crudos": {
+        "2021": 6976,
+        "2022": 9411,
+        "2023": 9687,
+        "2024": 8187,
+        "2025": 18974,
+        "2026": 18974
+      }
+    },
+    "cadetes_ingreso_hombres__jalisco": {
+      "id": "cadetes_ingreso_hombres__jalisco",
+      "grupo": "cadetes_ingreso",
+      "grupoLabel": "Cadetes que ingresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Hombres",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 56,
+      "valores": {
+        "2021": 107,
+        "2022": 329,
+        "2023": 268,
+        "2024": 108,
+        "2025": 132,
+        "2026": 132
+      },
+      "crudos": {
+        "2021": 107,
+        "2022": 329,
+        "2023": 268,
+        "2024": 108,
+        "2025": 132,
+        "2026": 132
+      }
+    },
+    "cadetes_ingreso_mujeres__nacional": {
+      "id": "cadetes_ingreso_mujeres__nacional",
+      "grupo": "cadetes_ingreso",
+      "grupoLabel": "Cadetes que ingresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Mujeres",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 57,
+      "valores": {
+        "2021": 3795,
+        "2022": 4614,
+        "2023": 5787,
+        "2024": 4971,
+        "2025": 9506,
+        "2026": 9506
+      },
+      "crudos": {
+        "2021": 3795,
+        "2022": 4614,
+        "2023": 5787,
+        "2024": 4971,
+        "2025": 9506,
+        "2026": 9506
+      }
+    },
+    "cadetes_ingreso_mujeres__jalisco": {
+      "id": "cadetes_ingreso_mujeres__jalisco",
+      "grupo": "cadetes_ingreso",
+      "grupoLabel": "Cadetes que ingresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Mujeres",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 57,
+      "valores": {
+        "2021": 25,
+        "2022": 124,
+        "2023": 283,
+        "2024": 100,
+        "2025": 148,
+        "2026": 148
+      },
+      "crudos": {
+        "2021": 25,
+        "2022": 124,
+        "2023": 283,
+        "2024": 100,
+        "2025": 148,
+        "2026": 148
+      }
+    },
+    "cadetes_egreso_total__nacional": {
+      "id": "cadetes_egreso_total__nacional",
+      "grupo": "cadetes_egreso",
+      "grupoLabel": "Cadetes que egresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 59,
+      "valores": {
+        "2021": 9128,
+        "2022": 11281,
+        "2023": 12223,
+        "2024": 10465,
+        "2025": 25823,
+        "2026": 25823
+      },
+      "crudos": {
+        "2021": 9128,
+        "2022": 11281,
+        "2023": 12223,
+        "2024": 10465,
+        "2025": 25823,
+        "2026": 25823
+      }
+    },
+    "cadetes_egreso_total__jalisco": {
+      "id": "cadetes_egreso_total__jalisco",
+      "grupo": "cadetes_egreso",
+      "grupoLabel": "Cadetes que egresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 59,
+      "valores": {
+        "2021": 127,
+        "2022": 453,
+        "2023": 550,
+        "2024": 207,
+        "2025": 277,
+        "2026": 277
+      },
+      "crudos": {
+        "2021": 127,
+        "2022": 453,
+        "2023": 550,
+        "2024": 207,
+        "2025": 277,
+        "2026": 277
+      }
+    },
+    "cadetes_egreso_hombres__nacional": {
+      "id": "cadetes_egreso_hombres__nacional",
+      "grupo": "cadetes_egreso",
+      "grupoLabel": "Cadetes que egresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Hombres",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 60,
+      "valores": {
+        "2021": 6028,
+        "2022": 7267,
+        "2023": 7632,
+        "2024": 6386,
+        "2025": 17275,
+        "2026": 17275
+      },
+      "crudos": {
+        "2021": 6028,
+        "2022": 7267,
+        "2023": 7632,
+        "2024": 6386,
+        "2025": 17275,
+        "2026": 17275
+      }
+    },
+    "cadetes_egreso_hombres__jalisco": {
+      "id": "cadetes_egreso_hombres__jalisco",
+      "grupo": "cadetes_egreso",
+      "grupoLabel": "Cadetes que egresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Hombres",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 60,
+      "valores": {
+        "2021": 102,
+        "2022": 329,
+        "2023": 268,
+        "2024": 107,
+        "2025": 129,
+        "2026": 129
+      },
+      "crudos": {
+        "2021": 102,
+        "2022": 329,
+        "2023": 268,
+        "2024": 107,
+        "2025": 129,
+        "2026": 129
+      }
+    },
+    "cadetes_egreso_mujeres__nacional": {
+      "id": "cadetes_egreso_mujeres__nacional",
+      "grupo": "cadetes_egreso",
+      "grupoLabel": "Cadetes que egresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Mujeres",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 61,
+      "valores": {
+        "2021": 3100,
+        "2022": 4014,
+        "2023": 4591,
+        "2024": 4079,
+        "2025": 8548,
+        "2026": 8548
+      },
+      "crudos": {
+        "2021": 3100,
+        "2022": 4014,
+        "2023": 4591,
+        "2024": 4079,
+        "2025": 8548,
+        "2026": 8548
+      }
+    },
+    "cadetes_egreso_mujeres__jalisco": {
+      "id": "cadetes_egreso_mujeres__jalisco",
+      "grupo": "cadetes_egreso",
+      "grupoLabel": "Cadetes que egresaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Mujeres",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 61,
+      "valores": {
+        "2021": 25,
+        "2022": 124,
+        "2023": 282,
+        "2024": 100,
+        "2025": 148,
+        "2026": 148
+      },
+      "crudos": {
+        "2021": 25,
+        "2022": 124,
+        "2023": 282,
+        "2024": 100,
+        "2025": 148,
+        "2026": 148
+      }
+    },
+    "cadetes_desercion_total__nacional": {
+      "id": "cadetes_desercion_total__nacional",
+      "grupo": "cadetes_desercion",
+      "grupoLabel": "Cadetes que desertaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 63,
+      "valores": {
+        "2021": 1557,
+        "2022": 3239,
+        "2023": 2908,
+        "2024": 2659,
+        "2025": 1599,
+        "2026": 1599
+      },
+      "crudos": {
+        "2021": 1557,
+        "2022": 3239,
+        "2023": 2908,
+        "2024": 2659,
+        "2025": 1599,
+        "2026": 1599
+      }
+    },
+    "cadetes_desercion_total__jalisco": {
+      "id": "cadetes_desercion_total__jalisco",
+      "grupo": "cadetes_desercion",
+      "grupoLabel": "Cadetes que desertaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 63,
+      "valores": {
+        "2021": 5,
+        "2022": 0,
+        "2023": 1,
+        "2024": 1,
+        "2025": 3,
+        "2026": 3
+      },
+      "crudos": {
+        "2021": 5,
+        "2022": 0,
+        "2023": 1,
+        "2024": 1,
+        "2025": 3,
+        "2026": 3
+      }
+    },
+    "cadetes_desercion_hombres__nacional": {
+      "id": "cadetes_desercion_hombres__nacional",
+      "grupo": "cadetes_desercion",
+      "grupoLabel": "Cadetes que desertaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Hombres",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 64,
+      "valores": {
+        "2021": 963,
+        "2022": 2412,
+        "2023": 1885,
+        "2024": 1705,
+        "2025": 1055,
+        "2026": 1055
+      },
+      "crudos": {
+        "2021": 963,
+        "2022": 2412,
+        "2023": 1885,
+        "2024": 1705,
+        "2025": 1055,
+        "2026": 1055
+      }
+    },
+    "cadetes_desercion_hombres__jalisco": {
+      "id": "cadetes_desercion_hombres__jalisco",
+      "grupo": "cadetes_desercion",
+      "grupoLabel": "Cadetes que desertaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Hombres",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 64,
+      "valores": {
+        "2021": 5,
+        "2022": 0,
+        "2023": 0,
+        "2024": 1,
+        "2025": 3,
+        "2026": 3
+      },
+      "crudos": {
+        "2021": 5,
+        "2022": 0,
+        "2023": 0,
+        "2024": 1,
+        "2025": 3,
+        "2026": 3
+      }
+    },
+    "cadetes_desercion_mujeres__nacional": {
+      "id": "cadetes_desercion_mujeres__nacional",
+      "grupo": "cadetes_desercion",
+      "grupoLabel": "Cadetes que desertaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Mujeres",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 65,
+      "valores": {
+        "2021": 594,
+        "2022": 827,
+        "2023": 1023,
+        "2024": 954,
+        "2025": 544,
+        "2026": 544
+      },
+      "crudos": {
+        "2021": 594,
+        "2022": 827,
+        "2023": 1023,
+        "2024": 954,
+        "2025": 544,
+        "2026": 544
+      }
+    },
+    "cadetes_desercion_mujeres__jalisco": {
+      "id": "cadetes_desercion_mujeres__jalisco",
+      "grupo": "cadetes_desercion",
+      "grupoLabel": "Cadetes que desertaron, según sexo",
+      "seccion": "estructura",
+      "etiqueta": "Mujeres",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 65,
+      "valores": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 1,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      },
+      "crudos": {
+        "2021": 0,
+        "2022": 0,
+        "2023": 1,
+        "2024": 0,
+        "2025": 0,
+        "2026": 0
+      }
+    },
+    "llamadas_total__nacional": {
+      "id": "llamadas_total__nacional",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "llamadas",
+      "filaSheet": 68,
+      "valores": {
+        "2021": 15758402,
+        "2022": 15998381,
+        "2023": 15808259,
+        "2024": 16113039,
+        "2025": 13669904,
+        "2026": 13970181
+      },
+      "crudos": {
+        "2021": 15758402,
+        "2022": 15998381,
+        "2023": 15808259,
+        "2024": 16113039,
+        "2025": 13669904,
+        "2026": 13970181
+      }
+    },
+    "llamadas_total__jalisco": {
+      "id": "llamadas_total__jalisco",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "llamadas",
+      "filaSheet": 68,
+      "valores": {
+        "2021": 897146,
+        "2022": 1043660,
+        "2023": 922931,
+        "2024": 880801,
+        "2025": 887191,
+        "2026": 887191
+      },
+      "crudos": {
+        "2021": 897146,
+        "2022": 1043660,
+        "2023": 922931,
+        "2024": 880801,
+        "2025": 887191,
+        "2026": 887191
+      }
+    },
+    "llamadas_911__nacional": {
+      "id": "llamadas_911__nacional",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Sistema 911",
+      "rol": "nacional",
+      "unidad": "llamadas",
+      "filaSheet": 69,
+      "valores": {
+        "2021": 15427965,
+        "2022": 15635160,
+        "2023": 15500930,
+        "2024": 15791613,
+        "2025": 13365693,
+        "2026": 13365693
+      },
+      "crudos": {
+        "2021": 15427965,
+        "2022": 15635160,
+        "2023": 15500930,
+        "2024": 15791613,
+        "2025": 13365693,
+        "2026": 13365693
+      }
+    },
+    "llamadas_911__jalisco": {
+      "id": "llamadas_911__jalisco",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Sistema 911",
+      "rol": "jalisco",
+      "unidad": "llamadas",
+      "filaSheet": 69,
+      "valores": {
+        "2021": 848167,
+        "2022": 1001105,
+        "2023": 880964,
+        "2024": 838438,
+        "2025": 847630,
+        "2026": 847630
+      },
+      "crudos": {
+        "2021": 848167,
+        "2022": 1001105,
+        "2023": 880964,
+        "2024": 838438,
+        "2025": 847630,
+        "2026": 847630
+      }
+    },
+    "llamadas_089__nacional": {
+      "id": "llamadas_089__nacional",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Sistema 089",
+      "rol": "nacional",
+      "unidad": "llamadas",
+      "filaSheet": 70,
+      "valores": {
+        "2021": 282377,
+        "2022": 305912,
+        "2023": 277359,
+        "2024": 287589,
+        "2025": 268571,
+        "2026": 268571
+      },
+      "crudos": {
+        "2021": 282377,
+        "2022": 305912,
+        "2023": 277359,
+        "2024": 287589,
+        "2025": 268571,
+        "2026": 268571
+      }
+    },
+    "llamadas_089__jalisco": {
+      "id": "llamadas_089__jalisco",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Sistema 089",
+      "rol": "jalisco",
+      "unidad": "llamadas",
+      "filaSheet": 70,
+      "valores": {
+        "2021": 11380,
+        "2022": 14156,
+        "2023": 11995,
+        "2024": 13520,
+        "2025": 13693,
+        "2026": 13693
+      },
+      "crudos": {
+        "2021": 11380,
+        "2022": 14156,
+        "2023": 11995,
+        "2024": 13520,
+        "2025": 13693,
+        "2026": 13693
+      }
+    },
+    "llamadas_otro__nacional": {
+      "id": "llamadas_otro__nacional",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Otro sistema",
+      "rol": "nacional",
+      "unidad": "llamadas",
+      "filaSheet": 71,
+      "valores": {
+        "2021": 48061,
+        "2022": 57309,
+        "2023": 29972,
+        "2024": 33837,
+        "2025": 35640,
+        "2026": 335917
+      },
+      "crudos": {
+        "2021": 48061,
+        "2022": 57309,
+        "2023": 29972,
+        "2024": 33837,
+        "2025": 35640,
+        "2026": 335917
+      }
+    },
+    "llamadas_otro__jalisco": {
+      "id": "llamadas_otro__jalisco",
+      "grupo": "llamadas",
+      "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+      "seccion": "ejercicio",
+      "etiqueta": "Otro sistema",
+      "rol": "jalisco",
+      "unidad": "llamadas",
+      "filaSheet": 71,
+      "valores": {
+        "2021": 37599,
+        "2022": 28399,
+        "2023": 29972,
+        "2024": 28843,
+        "2025": 25868,
+        "2026": 25868
+      },
+      "crudos": {
+        "2021": 37599,
+        "2022": 28399,
+        "2023": 29972,
+        "2024": 28843,
+        "2025": 25868,
+        "2026": 25868
+      }
+    },
+    "puestas_justicia_civica__nacional": {
+      "id": "puestas_justicia_civica__nacional",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Ante Juez Cívico u Oficial Calificador",
+      "rol": "nacional",
+      "unidad": "puestas",
+      "filaSheet": 73,
+      "valores": {
+        "2021": 539038,
+        "2022": 299204,
+        "2023": 282898,
+        "2024": 319961,
+        "2025": 283691,
+        "2026": 283499
+      },
+      "crudos": {
+        "2021": 539038,
+        "2022": 299204,
+        "2023": 282898,
+        "2024": 319961,
+        "2025": 283691,
+        "2026": 283499
+      }
+    },
+    "puestas_justicia_civica__jalisco": {
+      "id": "puestas_justicia_civica__jalisco",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Ante Juez Cívico u Oficial Calificador",
+      "rol": "jalisco",
+      "unidad": "puestas",
+      "filaSheet": 73,
+      "valores": {
+        "2021": 1113,
+        "2022": 708,
+        "2023": 484,
+        "2024": 220,
+        "2025": 55,
+        "2026": 55
+      },
+      "crudos": {
+        "2021": 1113,
+        "2022": 708,
+        "2023": 484,
+        "2024": 220,
+        "2025": 55,
+        "2026": 55
+      }
+    },
+    "puestas_ministerio_publico__nacional": {
+      "id": "puestas_ministerio_publico__nacional",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Ante el Ministerio Público",
+      "rol": "nacional",
+      "unidad": "puestas",
+      "filaSheet": 74,
+      "valores": {
+        "2021": 200418,
+        "2022": 180487,
+        "2023": 170587,
+        "2024": 146864,
+        "2025": 146505,
+        "2026": 146697
+      },
+      "crudos": {
+        "2021": 200418,
+        "2022": 180487,
+        "2023": 170587,
+        "2024": 146864,
+        "2025": 146505,
+        "2026": 146697
+      }
+    },
+    "puestas_ministerio_publico__jalisco": {
+      "id": "puestas_ministerio_publico__jalisco",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Ante el Ministerio Público",
+      "rol": "jalisco",
+      "unidad": "puestas",
+      "filaSheet": 74,
+      "valores": {
+        "2021": 1651,
+        "2022": 1343,
+        "2023": 1126,
+        "2024": 1556,
+        "2025": 1508,
+        "2026": 1508
+      },
+      "crudos": {
+        "2021": 1651,
+        "2022": 1343,
+        "2023": 1126,
+        "2024": 1556,
+        "2025": 1508,
+        "2026": 1508
+      }
+    },
+    "puestas_objetos__nacional": {
+      "id": "puestas_objetos__nacional",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Puestas a disposición de objetos",
+      "rol": "nacional",
+      "unidad": "puestas",
+      "filaSheet": 75,
+      "valores": {
+        "2021": 107517,
+        "2022": 83063,
+        "2023": 208822,
+        "2024": 88215,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 107517,
+        "2022": 83063,
+        "2023": 208822,
+        "2024": 88215,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "puestas_objetos__jalisco": {
+      "id": "puestas_objetos__jalisco",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Puestas a disposición de objetos",
+      "rol": "jalisco",
+      "unidad": "puestas",
+      "filaSheet": 75,
+      "valores": {
+        "2021": null,
+        "2022": 55,
+        "2023": 174,
+        "2024": 2689,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 55,
+        "2023": 174,
+        "2024": 2689,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "puestas_total_objetos_personas__nacional": {
+      "id": "puestas_total_objetos_personas__nacional",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Total (objetos y personas)",
+      "rol": "nacional",
+      "unidad": "puestas",
+      "filaSheet": 76,
+      "valores": {
+        "2021": 846973,
+        "2022": 562754,
+        "2023": 662307,
+        "2024": 555040,
+        "2025": 430196,
+        "2026": 430196
+      },
+      "crudos": {
+        "2021": 846973,
+        "2022": 562754,
+        "2023": 662307,
+        "2024": 555040,
+        "2025": 430196,
+        "2026": 430196
+      }
+    },
+    "puestas_total_objetos_personas__jalisco": {
+      "id": "puestas_total_objetos_personas__jalisco",
+      "grupo": "puestas_disposicion",
+      "grupoLabel": "Puestas a disposición de personas, por autoridad",
+      "seccion": "ejercicio",
+      "etiqueta": "Total (objetos y personas)",
+      "rol": "jalisco",
+      "unidad": "puestas",
+      "filaSheet": 76,
+      "valores": {
+        "2021": 2764,
+        "2022": 2106,
+        "2023": 1784,
+        "2024": 4465,
+        "2025": 1563,
+        "2026": 1563
+      },
+      "crudos": {
+        "2021": 2764,
+        "2022": 2106,
+        "2023": 1784,
+        "2024": 4465,
+        "2025": 1563,
+        "2026": 1563
+      }
+    },
+    "armas_jalisco": {
+      "id": "armas_jalisco",
+      "grupo": "armas_aseguradas",
+      "grupoLabel": "Armas de fuego aseguradas — Jalisco",
+      "seccion": "ejercicio",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "armas",
+      "filaSheet": 78,
+      "valores": {
+        "2021": 156,
+        "2022": 165,
+        "2023": 152,
+        "2024": 219,
+        "2025": 191,
+        "2026": 191
+      },
+      "crudos": {
+        "2021": 156,
+        "2022": 165,
+        "2023": 152,
+        "2024": 219,
+        "2025": 191,
+        "2026": 191
+      }
+    },
+    "victimas_total__nacional": {
+      "id": "victimas_total__nacional",
+      "grupo": "victimas_atendidas",
+      "grupoLabel": "Víctimas atendidas, según sexo",
+      "seccion": "ejercicio",
+      "etiqueta": "Total",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 80,
+      "valores": {
+        "2021": null,
+        "2022": 164431,
+        "2023": 74913,
+        "2024": 89095,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": null,
+        "2022": 164431,
+        "2023": 74913,
+        "2024": 89095,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "victimas_total__jalisco": {
+      "id": "victimas_total__jalisco",
+      "grupo": "victimas_atendidas",
+      "grupoLabel": "Víctimas atendidas, según sexo",
+      "seccion": "ejercicio",
+      "etiqueta": "Total",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 80,
+      "valores": {
+        "2021": null,
+        "2022": 1343,
+        "2023": 1749,
+        "2024": 1505,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": null,
+        "2022": 1343,
+        "2023": 1749,
+        "2024": 1505,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "boletas_infraccion__nacional": {
+      "id": "boletas_infraccion__nacional",
+      "grupo": "boletas",
+      "grupoLabel": "Boletas de infracción levantadas e imágenes detectadas",
+      "seccion": "ejercicio",
+      "etiqueta": "Boletas de infracción levantadas",
+      "rol": "nacional",
+      "unidad": "boletas",
+      "filaSheet": 82,
+      "valores": {
+        "2021": 2078731,
+        "2022": 6727666,
+        "2023": 5192681,
+        "2024": 2329107,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 2078731,
+        "2022": 6727666,
+        "2023": 5192681,
+        "2024": 2329107,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "boletas_infraccion__jalisco": {
+      "id": "boletas_infraccion__jalisco",
+      "grupo": "boletas",
+      "grupoLabel": "Boletas de infracción levantadas e imágenes detectadas",
+      "seccion": "ejercicio",
+      "etiqueta": "Boletas de infracción levantadas",
+      "rol": "jalisco",
+      "unidad": "boletas",
+      "filaSheet": 82,
+      "valores": {
+        "2021": 760992,
+        "2022": 789772,
+        "2023": 772299,
+        "2024": 907338,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 760992,
+        "2022": 789772,
+        "2023": 772299,
+        "2024": 907338,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "enfrentamientos_nacional": {
+      "id": "enfrentamientos_nacional",
+      "grupo": "enfrentamientos",
+      "grupoLabel": "Enfrentamientos con elementos de seguridad pública estatal",
+      "seccion": "ejercicio",
+      "etiqueta": "Nacional",
+      "rol": "nacional",
+      "unidad": "eventos",
+      "filaSheet": 84,
+      "valores": {
+        "2021": 716,
+        "2022": 583,
+        "2023": 444,
+        "2024": 667,
+        "2025": 755,
+        "2026": 1039
+      },
+      "crudos": {
+        "2021": 716,
+        "2022": 583,
+        "2023": 444,
+        "2024": 667,
+        "2025": 755,
+        "2026": 1039
+      }
+    },
+    "enfrentamientos_jalisco": {
+      "id": "enfrentamientos_jalisco",
+      "grupo": "enfrentamientos",
+      "grupoLabel": "Enfrentamientos con elementos de seguridad pública estatal",
+      "seccion": "ejercicio",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "eventos",
+      "filaSheet": 85,
+      "valores": {
+        "2021": 13,
+        "2022": 9,
+        "2023": 17,
+        "2024": 21,
+        "2025": 8,
+        "2026": 33
+      },
+      "crudos": {
+        "2021": 13,
+        "2022": 9,
+        "2023": 17,
+        "2024": 21,
+        "2025": 8,
+        "2026": 33
+      }
+    },
+    "civiles_lesionados__nacional": {
+      "id": "civiles_lesionados__nacional",
+      "grupo": "civiles_armados",
+      "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Lesionados",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 87,
+      "valores": {
+        "2021": 93,
+        "2022": 52,
+        "2023": 49,
+        "2024": 67,
+        "2025": 95,
+        "2026": 3182
+      },
+      "crudos": {
+        "2021": 93,
+        "2022": 52,
+        "2023": 49,
+        "2024": 67,
+        "2025": 95,
+        "2026": 3182
+      }
+    },
+    "civiles_lesionados__jalisco": {
+      "id": "civiles_lesionados__jalisco",
+      "grupo": "civiles_armados",
+      "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Lesionados",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 87,
+      "valores": {
+        "2021": 9,
+        "2022": 0,
+        "2023": 0,
+        "2024": 2,
+        "2025": 67,
+        "2026": 67
+      },
+      "crudos": {
+        "2021": 9,
+        "2022": 0,
+        "2023": 0,
+        "2024": 2,
+        "2025": 67,
+        "2026": 67
+      }
+    },
+    "civiles_fallecidos__nacional": {
+      "id": "civiles_fallecidos__nacional",
+      "grupo": "civiles_armados",
+      "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Fallecidos",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 88,
+      "valores": {
+        "2021": 281,
+        "2022": 135,
+        "2023": 137,
+        "2024": 241,
+        "2025": 167,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 281,
+        "2022": 135,
+        "2023": 137,
+        "2024": 241,
+        "2025": 167,
+        "2026": null
+      }
+    },
+    "civiles_fallecidos__jalisco": {
+      "id": "civiles_fallecidos__jalisco",
+      "grupo": "civiles_armados",
+      "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Fallecidos",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 88,
+      "valores": {
+        "2021": 3,
+        "2022": 9,
+        "2023": 4,
+        "2024": 18,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 3,
+        "2022": 9,
+        "2023": 4,
+        "2024": 18,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "civiles_detenidos__nacional": {
+      "id": "civiles_detenidos__nacional",
+      "grupo": "civiles_armados",
+      "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Detenidos",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 89,
+      "valores": {
+        "2021": 352,
+        "2022": 253,
+        "2023": 284,
+        "2024": 555,
+        "2025": 618,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 352,
+        "2022": 253,
+        "2023": 284,
+        "2024": 555,
+        "2025": 618,
+        "2026": null
+      }
+    },
+    "civiles_detenidos__jalisco": {
+      "id": "civiles_detenidos__jalisco",
+      "grupo": "civiles_armados",
+      "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Detenidos",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 89,
+      "valores": {
+        "2021": 9,
+        "2022": 7,
+        "2023": 14,
+        "2024": 7,
+        "2025": null,
+        "2026": null
+      },
+      "crudos": {
+        "2021": 9,
+        "2022": 7,
+        "2023": 14,
+        "2024": 7,
+        "2025": null,
+        "2026": null
+      }
+    },
+    "personal_enf_lesionados__nacional": {
+      "id": "personal_enf_lesionados__nacional",
+      "grupo": "personal_en_enfrentamientos",
+      "grupoLabel": "Personal de seguridad pública lesionado/fallecido en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Lesionados",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 91,
+      "valores": {
+        "2021": null,
+        "2022": 95,
+        "2023": 76,
+        "2024": 178,
+        "2025": 3182,
+        "2026": 3182
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 95,
+        "2023": 76,
+        "2024": 178,
+        "2025": 3182,
+        "2026": 3182
+      }
+    },
+    "personal_enf_lesionados__jalisco": {
+      "id": "personal_enf_lesionados__jalisco",
+      "grupo": "personal_en_enfrentamientos",
+      "grupoLabel": "Personal de seguridad pública lesionado/fallecido en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Lesionados",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 91,
+      "valores": {
+        "2021": null,
+        "2022": 5,
+        "2023": 3,
+        "2024": 0,
+        "2025": 67,
+        "2026": 67
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 5,
+        "2023": 3,
+        "2024": 0,
+        "2025": 67,
+        "2026": 67
+      }
+    },
+    "personal_enf_fallecidos__nacional": {
+      "id": "personal_enf_fallecidos__nacional",
+      "grupo": "personal_en_enfrentamientos",
+      "grupoLabel": "Personal de seguridad pública lesionado/fallecido en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Fallecidos",
+      "rol": "nacional",
+      "unidad": "personas",
+      "filaSheet": 92,
+      "valores": {
+        "2021": null,
+        "2022": 40,
+        "2023": 35,
+        "2024": 72,
+        "2025": 578,
+        "2026": 578
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 40,
+        "2023": 35,
+        "2024": 72,
+        "2025": 578,
+        "2026": 578
+      }
+    },
+    "personal_enf_fallecidos__jalisco": {
+      "id": "personal_enf_fallecidos__jalisco",
+      "grupo": "personal_en_enfrentamientos",
+      "grupoLabel": "Personal de seguridad pública lesionado/fallecido en enfrentamientos",
+      "seccion": "ejercicio",
+      "etiqueta": "Fallecidos",
+      "rol": "jalisco",
+      "unidad": "personas",
+      "filaSheet": 92,
+      "valores": {
+        "2021": null,
+        "2022": 1,
+        "2023": 1,
+        "2024": 0,
+        "2025": 18,
+        "2026": 18
+      },
+      "crudos": {
+        "2021": "N/A",
+        "2022": 1,
+        "2023": 1,
+        "2024": 0,
+        "2025": 18,
+        "2026": 18
+      }
+    },
+    "empresas_nacional": {
+      "id": "empresas_nacional",
+      "grupo": "empresas_seguridad_privada",
+      "grupoLabel": "Empresas de seguridad privada registradas",
+      "seccion": "ejercicio",
+      "etiqueta": "Nacional",
+      "rol": "nacional",
+      "unidad": "empresas",
+      "filaSheet": 94,
+      "valores": {
+        "2021": 5275,
+        "2022": 5875,
+        "2023": 6138,
+        "2024": 6263,
+        "2025": 5124,
+        "2026": 5124
+      },
+      "crudos": {
+        "2021": 5275,
+        "2022": 5875,
+        "2023": 6138,
+        "2024": 6263,
+        "2025": 5124,
+        "2026": 5124
+      }
+    },
+    "empresas_jalisco": {
+      "id": "empresas_jalisco",
+      "grupo": "empresas_seguridad_privada",
+      "grupoLabel": "Empresas de seguridad privada registradas",
+      "seccion": "ejercicio",
+      "etiqueta": "Jalisco",
+      "rol": "jalisco",
+      "unidad": "empresas",
+      "filaSheet": 95,
+      "valores": {
+        "2021": 265,
+        "2022": 248,
+        "2023": 58,
+        "2024": 106,
+        "2025": 85,
+        "2026": 85
+      },
+      "crudos": {
+        "2021": 265,
+        "2022": 248,
+        "2023": 58,
+        "2024": 106,
+        "2025": 85,
+        "2026": 85
+      }
+    }
+  },
+  "secciones": {
+    "estructura": {
+      "personal_adscrito": {
+        "grupoLabel": "Personal adscrito a las instituciones de seguridad pública estatal",
+        "seriesIds": [
+          "personal_adscrito_total",
+          "personal_adscrito_gn",
+          "personal_adscrito_estatales",
+          "personal_adscrito_jalisco"
+        ]
+      },
+      "tasa_preventiva": {
+        "grupoLabel": "Tasa de elementos de la policía preventiva por cada 1,000 hab.",
+        "seriesIds": [
+          "tasa_preventiva_nacional",
+          "tasa_preventiva_jalisco"
+        ]
+      },
+      "personal_por_funcion": {
+        "grupoLabel": "Personal de las corporaciones policiales, por función",
+        "seriesIds": [
+          "funcion_total__nacional",
+          "funcion_total__jalisco",
+          "funcion_transito__nacional",
+          "funcion_transito__jalisco",
+          "funcion_prevencion__nacional",
+          "funcion_prevencion__jalisco",
+          "funcion_proximidad__nacional",
+          "funcion_proximidad__jalisco",
+          "funcion_reaccion__nacional",
+          "funcion_reaccion__jalisco",
+          "funcion_investigacion__nacional",
+          "funcion_investigacion__jalisco"
+        ]
+      },
+      "cup": {
+        "grupoLabel": "Personal con Certificado Único Policial (CUP), por tipo de corporación",
+        "seriesIds": [
+          "cup_total__nacional",
+          "cup_total__jalisco",
+          "cup_gn__nacional",
+          "cup_gn__jalisco",
+          "cup_preventiva__nacional",
+          "cup_preventiva__jalisco",
+          "cup_transito__nacional",
+          "cup_transito__jalisco",
+          "cup_bancaria__nacional",
+          "cup_bancaria__jalisco",
+          "cup_cibernetica__nacional",
+          "cup_cibernetica__jalisco",
+          "cup_otro__nacional",
+          "cup_otro__jalisco",
+          "cup_no_especificado__nacional",
+          "cup_no_especificado__jalisco"
+        ]
+      },
+      "personal_fallecido": {
+        "grupoLabel": "Personal fallecido, según causa de fallecimiento",
+        "seriesIds": [
+          "fallecido_total__nacional",
+          "fallecido_total__jalisco",
+          "fallecido_naturales__nacional",
+          "fallecido_naturales__jalisco",
+          "fallecido_doloso__nacional",
+          "fallecido_doloso__jalisco",
+          "fallecido_culposo__nacional",
+          "fallecido_culposo__jalisco",
+          "fallecido_accidentes__nacional",
+          "fallecido_accidentes__jalisco",
+          "fallecido_suicidio__nacional",
+          "fallecido_suicidio__jalisco",
+          "fallecido_otras__nacional",
+          "fallecido_otras__jalisco"
+        ]
+      },
+      "condicion_personal": {
+        "grupoLabel": "Personal según condición de lesión, desaparición y jubilación",
+        "seriesIds": [
+          "condicion_lesionados__nacional",
+          "condicion_lesionados__jalisco",
+          "condicion_desaparecidos__nacional",
+          "condicion_desaparecidos__jalisco",
+          "condicion_jubilados__nacional",
+          "condicion_jubilados__jalisco",
+          "condicion_renuncio__nacional",
+          "condicion_renuncio__jalisco"
+        ]
+      },
+      "presupuesto": {
+        "grupoLabel": "Presupuesto ejercido (millones de pesos)",
+        "seriesIds": [
+          "presupuesto_nacional",
+          "presupuesto_jalisco"
+        ]
+      },
+      "quejas_ciudadanas": {
+        "grupoLabel": "Quejas ciudadanas recibidas en Unidades de Asuntos Internos",
+        "seriesIds": [
+          "quejas_jalisco"
+        ]
+      },
+      "infraestructura": {
+        "grupoLabel": "Infraestructura para la seguridad pública — Jalisco",
+        "seriesIds": [
+          "infra_comandancias",
+          "infra_cuarteles",
+          "infra_modulos",
+          "infra_camaras"
+        ]
+      },
+      "academias": {
+        "grupoLabel": "Academias o institutos de formación policial — Jalisco",
+        "seriesIds": [
+          "academias_sedes"
+        ]
+      },
+      "cadetes_ingreso": {
+        "grupoLabel": "Cadetes que ingresaron, según sexo",
+        "seriesIds": [
+          "cadetes_ingreso_total__nacional",
+          "cadetes_ingreso_total__jalisco",
+          "cadetes_ingreso_hombres__nacional",
+          "cadetes_ingreso_hombres__jalisco",
+          "cadetes_ingreso_mujeres__nacional",
+          "cadetes_ingreso_mujeres__jalisco"
+        ]
+      },
+      "cadetes_egreso": {
+        "grupoLabel": "Cadetes que egresaron, según sexo",
+        "seriesIds": [
+          "cadetes_egreso_total__nacional",
+          "cadetes_egreso_total__jalisco",
+          "cadetes_egreso_hombres__nacional",
+          "cadetes_egreso_hombres__jalisco",
+          "cadetes_egreso_mujeres__nacional",
+          "cadetes_egreso_mujeres__jalisco"
+        ]
+      },
+      "cadetes_desercion": {
+        "grupoLabel": "Cadetes que desertaron, según sexo",
+        "seriesIds": [
+          "cadetes_desercion_total__nacional",
+          "cadetes_desercion_total__jalisco",
+          "cadetes_desercion_hombres__nacional",
+          "cadetes_desercion_hombres__jalisco",
+          "cadetes_desercion_mujeres__nacional",
+          "cadetes_desercion_mujeres__jalisco"
+        ]
+      }
+    },
+    "ejercicio": {
+      "llamadas": {
+        "grupoLabel": "Llamadas procedentes recibidas, por sistema telefónico de emergencia",
+        "seriesIds": [
+          "llamadas_total__nacional",
+          "llamadas_total__jalisco",
+          "llamadas_911__nacional",
+          "llamadas_911__jalisco",
+          "llamadas_089__nacional",
+          "llamadas_089__jalisco",
+          "llamadas_otro__nacional",
+          "llamadas_otro__jalisco"
+        ]
+      },
+      "puestas_disposicion": {
+        "grupoLabel": "Puestas a disposición de personas, por autoridad",
+        "seriesIds": [
+          "puestas_justicia_civica__nacional",
+          "puestas_justicia_civica__jalisco",
+          "puestas_ministerio_publico__nacional",
+          "puestas_ministerio_publico__jalisco",
+          "puestas_objetos__nacional",
+          "puestas_objetos__jalisco",
+          "puestas_total_objetos_personas__nacional",
+          "puestas_total_objetos_personas__jalisco"
+        ]
+      },
+      "armas_aseguradas": {
+        "grupoLabel": "Armas de fuego aseguradas — Jalisco",
+        "seriesIds": [
+          "armas_jalisco"
+        ]
+      },
+      "victimas_atendidas": {
+        "grupoLabel": "Víctimas atendidas, según sexo",
+        "seriesIds": [
+          "victimas_total__nacional",
+          "victimas_total__jalisco"
+        ]
+      },
+      "boletas": {
+        "grupoLabel": "Boletas de infracción levantadas e imágenes detectadas",
+        "seriesIds": [
+          "boletas_infraccion__nacional",
+          "boletas_infraccion__jalisco"
+        ]
+      },
+      "enfrentamientos": {
+        "grupoLabel": "Enfrentamientos con elementos de seguridad pública estatal",
+        "seriesIds": [
+          "enfrentamientos_nacional",
+          "enfrentamientos_jalisco"
+        ]
+      },
+      "civiles_armados": {
+        "grupoLabel": "Civiles armados involucrados en enfrentamientos",
+        "seriesIds": [
+          "civiles_lesionados__nacional",
+          "civiles_lesionados__jalisco",
+          "civiles_fallecidos__nacional",
+          "civiles_fallecidos__jalisco",
+          "civiles_detenidos__nacional",
+          "civiles_detenidos__jalisco"
+        ]
+      },
+      "personal_en_enfrentamientos": {
+        "grupoLabel": "Personal de seguridad pública lesionado/fallecido en enfrentamientos",
+        "seriesIds": [
+          "personal_enf_lesionados__nacional",
+          "personal_enf_lesionados__jalisco",
+          "personal_enf_fallecidos__nacional",
+          "personal_enf_fallecidos__jalisco"
+        ]
+      },
+      "empresas_seguridad_privada": {
+        "grupoLabel": "Empresas de seguridad privada registradas",
+        "seriesIds": [
+          "empresas_nacional",
+          "empresas_jalisco"
+        ]
+      }
+    }
+  },
+  "snapshotNota": "Respaldo local generado a partir del Google Sheet CNSPE tal como estaba el 11-ago-2026. Se usa solo si falla el fetch en vivo. Para actualizarlo, regenerar desde el Sheet vigente.",
+  "snapshotFecha": "2026-08-11"
+}

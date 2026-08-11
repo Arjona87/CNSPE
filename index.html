@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Panorama Institucional CGES — CNSPE Jalisco vs. Nacional</title>
+<meta name="description" content="Gestión y desempeño de la institución de seguridad pública estatal de Jalisco, comparado con el total nacional. Fuente: INEGI, Censo Nacional de Seguridad Pública Estatal (CNSPE). Coordinación General Estratégica de Seguridad, Gobierno de Jalisco.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loading-overlay">
+  <div class="spinner"></div>
+  <div>Cargando información del Google Sheet…</div>
+</div>
+
+<!-- ============ Barra de estado ============ -->
+<div class="status-bar">
+  <div class="container">
+    <div><span id="status-dot" class="status-dot"></span><span id="status-text">Conectando con la fuente de datos…</span></div>
+    <div>Fuente: INEGI, CNSPE · cifras preliminares sujetas a actualización</div>
+  </div>
+</div>
+
+<!-- ============ Header / Portada ============ -->
+<header class="hero">
+  <div class="container">
+    <div class="brand">
+      <img src="CGES_logo.png" alt="Coordinación General Estratégica de Seguridad — Gobierno de Jalisco">
+    </div>
+    <h1 class="hero-title">Panorama Institucional <span class="accent">/</span> CNSPE Jalisco vs. Nacional</h1>
+    <p class="hero-sub">Gestión y desempeño de la institución de seguridad pública estatal: personal, presupuesto, infraestructura, formación y ejercicio de la función. Serie 2021–2025, comparativo Jalisco / Nacional.</p>
+    <div class="hero-controls">
+      <div class="filter-field">
+        <label for="filter-anio-kpi">Año de referencia (KPIs)</label>
+        <select id="filter-anio-kpi"></select>
+      </div>
+      <span class="badge-source">Última edición oficial: <b id="badge-ultima-edicion">—</b></span>
+    </div>
+  </div>
+</header>
+
+<!-- ============ Navegación de secciones ============ -->
+<div class="filters-bar">
+  <div class="container">
+    <div class="filter-count" style="display:flex; gap:16px; flex-wrap:wrap;">
+      <a href="#kpis-section">Indicadores clave</a>
+      <a href="#estructura-section">Estructura y recursos</a>
+      <a href="#ejercicio-section">Ejercicio de la función</a>
+      <a href="#notas-section">Notas y fuente</a>
+    </div>
+    <button class="btn-reset btn-report" id="btn-generar-reporte" disabled title="Se habilita en la Fase 4">Generar Reporte (Fase 4)</button>
+  </div>
+</div>
+
+<main class="container">
+
+  <!-- ============ Indicadores clave (KPIs) ============ -->
+  <section class="section" id="kpis-section">
+    <div class="section-head" data-dl="kpis">
+      <div class="eyebrow">Panorama general · <span id="kpi-anio-label">2025</span></div>
+      <h2>Indicadores clave — Jalisco</h2>
+      <p>Última edición oficial publicada por INEGI. Cada tarjeta muestra el valor de Jalisco y, como referencia, el valor Nacional del mismo año — no implica que "más alto" sea mejor o peor: depende del indicador.</p>
+    </div>
+    <div class="kpi-grid" id="kpi-grid"></div>
+  </section>
+
+  <!-- ============ SECCIÓN 1: Estructura organizacional y recursos ============ -->
+  <section class="section" id="estructura-section">
+    <div class="section-head" data-dl="estructura">
+      <div class="eyebrow">Módulo 1</div>
+      <h2>Estructura organizacional y recursos</h2>
+      <p>Personal, presupuesto, infraestructura, certificación y formación policial. Serie 2021–2025 (2026 se muestra aparte, sin publicar todavía — ver Notas).</p>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Personal adscrito — Nacional vs. Jalisco</h3>
+        <div class="card-sub">Incluye Guardia Nacional a partir de la edición 2025 (ver nota metodológica).</div>
+        <div class="chart-box tall" id="chart-personal-adscrito" data-grupo="personal_adscrito"></div>
+      </div>
+      <div class="card">
+        <h3>Tasa de policía preventiva por cada 1,000 hab.</h3>
+        <div class="chart-box tall" id="chart-tasa-preventiva" data-grupo="tasa_preventiva"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>Personal por función — Jalisco vs. Nacional</h3>
+      <div class="card-sub">Prevención, proximidad social, reacción, investigación y tránsito.</div>
+      <div class="chart-box tall" id="chart-personal-funcion" data-grupo="personal_por_funcion"></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>Certificado Único Policial (CUP)</h3>
+        <div class="chart-box tall" id="chart-cup" data-grupo="cup"></div>
+      </div>
+      <div class="card">
+        <h3>Personal fallecido, según causa</h3>
+        <div class="chart-box tall" id="chart-personal-fallecido" data-grupo="personal_fallecido"></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>Condición del personal</h3>
+        <div class="card-sub">Lesionados, desaparecidos, jubilados y renuncias.</div>
+        <div class="chart-box tall" id="chart-condicion-personal" data-grupo="condicion_personal"></div>
+      </div>
+      <div class="card">
+        <h3>Presupuesto ejercido</h3>
+        <div class="card-sub">Millones de pesos.</div>
+        <div class="chart-box tall" id="chart-presupuesto" data-grupo="presupuesto"></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>Régimen disciplinario — Jalisco</h3>
+        <div class="card-sub">Quejas ciudadanas recibidas en Asuntos Internos.</div>
+        <div class="chart-box" id="chart-quejas" data-grupo="quejas_ciudadanas"></div>
+      </div>
+      <div class="card">
+        <h3>Infraestructura — Jalisco</h3>
+        <div class="chart-box" id="chart-infraestructura" data-grupo="infraestructura"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>Academias: ingreso, egreso y deserción de cadetes</h3>
+      <div class="card-sub">Nacional vs. Jalisco, por sexo · Sedes o planteles en Jalisco: <b id="stat-academias-sedes">—</b></div>
+      <div class="grid-3">
+        <div class="chart-box" id="chart-cadetes-ingreso" data-grupo="cadetes_ingreso"></div>
+        <div class="chart-box" id="chart-cadetes-egreso" data-grupo="cadetes_egreso"></div>
+        <div class="chart-box" id="chart-cadetes-desercion" data-grupo="cadetes_desercion"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SECCIÓN 2: Ejercicio de la función ============ -->
+  <section class="section" id="ejercicio-section">
+    <div class="section-head" data-dl="ejercicio">
+      <div class="eyebrow">Módulo 2</div>
+      <h2>Ejercicio de la función de seguridad pública estatal</h2>
+      <p>Llamadas de emergencia, puestas a disposición, aseguramientos, enfrentamientos y seguridad privada. Serie 2021–2025.</p>
+    </div>
+
+    <div class="card">
+      <h3>Llamadas procedentes, por sistema telefónico</h3>
+      <div class="chart-box tall" id="chart-llamadas" data-grupo="llamadas"></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>Puestas a disposición, por autoridad</h3>
+        <div class="chart-box tall" id="chart-puestas-disposicion" data-grupo="puestas_disposicion"></div>
+      </div>
+      <div class="card">
+        <h3>Armas de fuego aseguradas — Jalisco</h3>
+        <div class="chart-box tall" id="chart-armas" data-grupo="armas_aseguradas"></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>Víctimas atendidas</h3>
+        <div class="chart-box" id="chart-victimas" data-grupo="victimas_atendidas"></div>
+      </div>
+      <div class="card">
+        <h3>Boletas de infracción levantadas</h3>
+        <div class="chart-box" id="chart-boletas" data-grupo="boletas"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>Enfrentamientos — Nacional vs. Jalisco</h3>
+      <div class="chart-box tall" id="chart-enfrentamientos" data-grupo="enfrentamientos"></div>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px;">
+      <div class="card">
+        <h3>Civiles armados involucrados</h3>
+        <div class="card-sub">Lesionados, fallecidos y detenidos en enfrentamientos.</div>
+        <div class="chart-box tall" id="chart-civiles-armados" data-grupo="civiles_armados"></div>
+      </div>
+      <div class="card">
+        <h3>Personal de seguridad pública en enfrentamientos</h3>
+        <div class="chart-box tall" id="chart-personal-enfrentamientos" data-grupo="personal_en_enfrentamientos"></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:18px;">
+      <h3>Empresas de seguridad privada registradas</h3>
+      <div class="chart-box tall" id="chart-empresas" data-grupo="empresas_seguridad_privada"></div>
+    </div>
+  </section>
+
+  <!-- ============ Notas y fuente ============ -->
+  <section class="section" id="notas-section">
+    <div class="section-head">
+      <div class="eyebrow">Transparencia de datos</div>
+      <h2>Notas y fuente</h2>
+    </div>
+    <div class="card">
+      <div class="insight">
+        <b>Fuente:</b> INEGI, Censo Nacional de Seguridad Pública Estatal (CNSPE), vía Google Sheet propio de la CGES.
+        El Sheet es la fuente de verdad — este dashboard nunca modifica ni reinterpreta sus valores.
+      </div>
+      <div class="insight warn" style="margin-top:10px;">
+        <b>Columna 2026:</b> el CNSPE 2026 aún no ha sido publicado por INEGI (publicación histórica: mediados de agosto).
+        Los valores que aparezcan en 2026 en el Sheet son responsabilidad editorial de quien lo administra —
+        este dashboard los muestra tal cual, marcados como año no confirmado, sin alterarlos.
+      </div>
+      <div class="insight" style="margin-top:10px;" id="nota-cobertura">Cargando cobertura de datos…</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="foot-brand">
+      <img src="CGES_logo.png" alt="CGES">
+      <div class="disclaimer">
+        Coordinación General Estratégica de Seguridad, Gobierno de Jalisco. Fuente: INEGI, Censo Nacional de Seguridad Pública Estatal (CNSPE). Cifras sujetas a la edición vigente del censo y a actualización.
+      </div>
+    </div>
+    <div id="footer-date"></div>
+  </div>
+</footer>
+
+<!-- ============ Módulos propios (Fase 3: + ECharts + charts.js) ============ -->
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<script src="data.js"></script>
+<script src="charts.js"></script>
+<script src="main.js"></script>
+<script>
+  document.getElementById("footer-date").textContent =
+    "Generado: " + new Date().toLocaleString("es-MX", { dateStyle: "long", timeStyle: "short" });
+</script>
+</body>
+</html>
