@@ -66,6 +66,11 @@ const SERIE_TEMPORAL_DEFS = {
     nombres: { infra_comandancias: "Comandancias y subestaciones", infra_cuarteles: "Cuarteles",
       infra_modulos: "Módulos y casetas", infra_camaras: "Cámaras de vigilancia" },
     tipo: "line", unidadEje2: "cámaras",
+    // Todas las series de este grupo son de Jalisco: el eje secundario solo
+    // separa la escala de "cámaras" para que se pueda graficar, NO marca un
+    // rol Nacional/Jalisco. Sin este flag, insightSerie() calculaba un
+    // "% del total nacional" sin sentido (cámaras-Jalisco / comandancias-Jalisco).
+    comparaNacional: false,
   },
   armas_aseguradas: {
     primario: ["armas_jalisco"], secundario: [], nombres: { armas_jalisco: "Jalisco" }, tipo: "bar",
@@ -140,9 +145,13 @@ function insightSerie(def, series) {
   let texto = `${def.nombres[primeraConDato] || primeraConDato}: de ${fmtN(v0)} (${primero}) a ${fmtN(v1)} (${ultimo})` +
     (variacion !== null ? `, ${dir} ${pct(Math.abs(variacion))}.` : ".");
 
-  // Participación de Jalisco respecto al Nacional, si el grupo tiene ambos.
+  // Participación de Jalisco respecto al Nacional, solo si el grupo tiene
+  // roles genuinamente distintos (Nacional vs. Jalisco). Grupos donde
+  // primario/secundario solo separan escalas de graficación —todas sus
+  // series son de Jalisco, ej. "infraestructura"— deben declararse con
+  // `comparaNacional: false` para no calcular un % sin sentido.
   const idNac = def.primario[0], idJal = def.secundario[0];
-  if (idNac && idJal && series[idNac] && series[idJal]) {
+  if (def.comparaNacional !== false && idNac && idJal && series[idNac] && series[idJal]) {
     const añoRef = [...ANIOS_CHART].reverse().find(a => series[idNac].valores[a] !== null && series[idJal].valores[a] !== null);
     if (añoRef) {
       const nac = series[idNac].valores[añoRef], jal = series[idJal].valores[añoRef];
@@ -226,30 +235,78 @@ function mejorAñoComposicion(categorias, series, rol) {
 function buildComposicionOption(def, series) {
   const añoNac = mejorAñoComposicion(def.categorias, series, "nacional");
   const añoJal = mejorAñoComposicion(def.categorias, series, "jalisco");
-
   const etiquetasCat = def.categorias.map(c => def.etiquetas[c] || c);
-  const seriesOpt = def.categorias.map((cat, i) => {
+
+  // Valores absolutos por categoría y columna (Nacional | Jalisco).
+  const crudos = def.categorias.map(cat => {
     const sNac = series[`${cat}__nacional`], sJal = series[`${cat}__jalisco`];
     const vNac = añoNac && sNac ? sNac.valores[añoNac] : null;
     const vJal = añoJal && sJal ? sJal.valores[añoJal] : null;
+    return [vNac, vJal];
+  });
+
+  // Totales por columna, para normalizar a 100% real. Jalisco suele ser
+  // ~1/10 del Nacional en magnitud absoluta; apilar valores crudos hacía
+  // que la barra de Jalisco se viera minúscula o invisible. Aquí cada
+  // barra representa el 100% de SU PROPIA columna, para comparar
+  // proporciones (no magnitudes) entre Nacional y Jalisco.
+  const totalNac = crudos.reduce((acc, [vNac]) => acc + (vNac ?? 0), 0);
+  const totalJal = crudos.reduce((acc, [, vJal]) => acc + (vJal ?? 0), 0);
+
+  const seriesOpt = def.categorias.map((cat, i) => {
+    const [vNac, vJal] = crudos[i];
+    const pNac = vNac !== null && totalNac ? (vNac / totalNac) * 100 : null;
+    const pJal = vJal !== null && totalJal ? (vJal / totalJal) * 100 : null;
     return {
       name: etiquetasCat[i],
       type: "bar",
       stack: "total",
       barWidth: "55%",
       color: PALETA_CATEGORICA[i % PALETA_CATEGORICA.length],
-      data: [vNac, vJal],
+      data: [
+        { value: pNac, crudo: vNac },
+        { value: pJal, crudo: vJal },
+      ],
       label: { show: false },
     };
   });
 
+  // Serie invisible (altura 0) que solo sirve para mostrar el TOTAL real
+  // de cada columna como etiqueta encima de la barra, sin tener que pasar
+  // el cursor. No aparece en la leyenda ni en el tooltip.
+  const totalSerie = {
+    name: "__total",
+    type: "bar",
+    stack: "total",
+    barWidth: "55%",
+    data: [0, 0],
+    itemStyle: { color: "transparent" },
+    silent: true,
+    tooltip: { show: false },
+    label: {
+      show: true,
+      position: "top",
+      fontWeight: 700,
+      fontSize: 12,
+      color: "#1F2937",
+      formatter: (p) => fmtN(p.dataIndex === 0 ? totalNac : totalJal),
+    },
+  };
+
   return {
-    tooltip: { trigger: "item", valueFormatter: v => fmtN(v) },
+    tooltip: {
+      trigger: "item",
+      formatter: (p) => {
+        const crudo = p.data && p.data.crudo;
+        const valorTxt = crudo !== null && crudo !== undefined ? fmtN(crudo) : "s/d";
+        return `${p.marker} ${p.seriesName}: ${valorTxt} (${p.value.toFixed(1)}%)`;
+      },
+    },
     legend: { data: etiquetasCat, bottom: 0, textStyle: { fontSize: 11 } },
-    grid: { top: 24, left: 8, right: 8, bottom: 40, containLabel: true },
+    grid: { top: 34, left: 8, right: 8, bottom: 40, containLabel: true },
     xAxis: { type: "category", data: [`Nacional${añoNac ? " (" + añoNac + ")" : ""}`, `Jalisco${añoJal ? " (" + añoJal + ")" : ""}`] },
-    yAxis: { type: "value" },
-    series: seriesOpt,
+    yAxis: { type: "value", max: 100, axisLabel: { formatter: "{value}%" } },
+    series: [...seriesOpt, totalSerie],
   };
 }
 
