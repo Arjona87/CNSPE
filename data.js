@@ -283,7 +283,12 @@ const SERIES_DEFS = [
       dashboards CGES (nunca /export?format=csv, ver cges/data-mapping.md).
    ------------------------------------------------------------------------- */
 function buildGvizUrl() {
-  return `https://docs.google.com/spreadsheets/d/${APP_CONFIG.SHEET_ID}/gviz/tq?tqx=out:json&gid=${APP_CONFIG.GID}`;
+  // headers=0 es la corrección: sin este parámetro, Google detecta la fila 1
+  // (el título largo) como si fuera un encabezado de columnas y la excluye de
+  // table.rows, recorriendo todas las filas siguientes una posición hacia
+  // arriba. Confirmado en producción el 11-ago-2026: sin headers=0, la fila
+  // "Nacional - GN" llegaba en el índice de la fila "Nacional Total".
+  return `https://docs.google.com/spreadsheets/d/${APP_CONFIG.SHEET_ID}/gviz/tq?tqx=out:json&gid=${APP_CONFIG.GID}&headers=0`;
 }
 
 // Devuelve la tabla cruda como arreglo de arreglos (fila -> [valores]),
@@ -306,6 +311,23 @@ function parseGvizToMatrix(text) {
   );
 }
 
+// Verificación de integridad estructural: si esta fila ancla no coincide,
+// algo corrió las filas (como el bug de headers=0 del 11-ago-2026) y es más
+// seguro caer al respaldo local, con un aviso claro en consola, que mostrar
+// 21 tarjetas con "Sin dato" sin que nadie sepa por qué.
+const FILA_ANCLA = { indice: 3, textoEsperado: "Nacional Total ( GN + Estatales)" };
+
+function verificarEstructura(matrix) {
+  const real = matrix[FILA_ANCLA.indice] && matrix[FILA_ANCLA.indice][0];
+  if (real !== FILA_ANCLA.textoEsperado) {
+    throw new Error(
+      `Estructura del Sheet inesperada: fila ${FILA_ANCLA.indice} trae "${real}", ` +
+      `se esperaba "${FILA_ANCLA.textoEsperado}". Es probable que el Sheet haya cambiado ` +
+      `de estructura (filas agregadas/movidas) o que gviz esté recortando encabezados de nuevo.`
+    );
+  }
+}
+
 async function fetchSheetMatrix() {
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), APP_CONFIG.FETCH_TIMEOUT_MS);
@@ -314,7 +336,9 @@ async function fetchSheetMatrix() {
     clearTimeout(timeout);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const text = await res.text();
-    return parseGvizToMatrix(text);
+    const matrix = parseGvizToMatrix(text);
+    verificarEstructura(matrix);
+    return matrix;
   } catch (err) {
     clearTimeout(timeout);
     throw err;
