@@ -21,7 +21,7 @@
    de inventar o interpolar (ver checklist de auditoría, SPECIALIST §4).
    ========================================================================= */
 
-const ANIOS_CHART = [2021, 2022, 2023, 2024, 2025]; // 2026 excluido: no publicado
+const ANIOS_CHART = [2021, 2022, 2023, 2024, 2025, 2026];
 
 const COLOR = {
   nacional: "#1B4F91", jalisco: "#F5821F",
@@ -29,8 +29,13 @@ const COLOR = {
 };
 const PALETA_CATEGORICA = [COLOR.nacional, COLOR.jalisco, COLOR.serie3, COLOR.serie4, COLOR.serie5, COLOR.serie6, COLOR.serie7];
 
-function fmtN(n) {
+// unidad-aware: "tasa" conserva 1-2 decimales, "mdp" hasta 1, el resto (conteos
+// de personas/empresas/eventos/etc.) se redondea a entero. Antes esta función
+// siempre redondeaba, por lo que una tasa como 0.90 se leía "1" en el texto.
+function fmtN(n, unidad) {
   if (n === null || n === undefined) return "s/d";
+  if (unidad === "tasa") return n.toLocaleString("es-MX", { minimumFractionDigits: 1, maximumFractionDigits: 2 });
+  if (unidad === "mdp") return n.toLocaleString("es-MX", { maximumFractionDigits: 1 });
   return Math.round(n).toLocaleString("es-MX");
 }
 function pct(n, dec = 1) {
@@ -41,6 +46,13 @@ function pct(n, dec = 1) {
 /* -------------------------------------------------------------------------
    ARQUETIPO 1 — SERIE TEMPORAL
    ------------------------------------------------------------------------- */
+// nacionalId/jaliscoId: identifican explícitamente qué serie del grupo es
+// Nacional y cuál es Jalisco, para el texto del insight (dos líneas propias,
+// una por rol) y la % de participación. null cuando el rol no existe en el
+// grupo (ej. "infraestructura", donde todo es Jalisco). Se declaran aparte
+// de primario/secundario porque esos dos arreglos solo controlan el eje del
+// gráfico (izquierdo/derecho), no el rol Nacional/Jalisco — confundirlos fue
+// la causa del bug de "% nacional" en infraestructura.
 const SERIE_TEMPORAL_DEFS = {
   personal_adscrito: {
     primario: ["personal_adscrito_total", "personal_adscrito_gn", "personal_adscrito_estatales"],
@@ -48,18 +60,27 @@ const SERIE_TEMPORAL_DEFS = {
     nombres: { personal_adscrito_total: "Nacional Total (GN+Estatales)", personal_adscrito_gn: "Guardia Nacional",
       personal_adscrito_estatales: "Nacional - Estatales", personal_adscrito_jalisco: "Jalisco" },
     tipo: "line", unidadEje2: "personas",
+    nacionalId: "personal_adscrito_total", jaliscoId: "personal_adscrito_jalisco",
   },
   tasa_preventiva: {
     primario: ["tasa_preventiva_nacional", "tasa_preventiva_jalisco"], secundario: [],
     nombres: { tasa_preventiva_nacional: "Nacional", tasa_preventiva_jalisco: "Jalisco" }, tipo: "line",
+    nacionalId: "tasa_preventiva_nacional", jaliscoId: "tasa_preventiva_jalisco",
+    // Una tasa por cada 1,000 hab. no es una cantidad sumable: "Jalisco
+    // representó X% del total nacional" no tiene sentido para un ratio.
+    // (Detectado en mi propia validación antes de entregar: al agregar
+    // jaliscoId explícito, este grupo empezó a calcular ese % sin querer.)
+    comparaNacional: false,
   },
   presupuesto: {
     primario: ["presupuesto_nacional"], secundario: ["presupuesto_jalisco"],
     nombres: { presupuesto_nacional: "Nacional", presupuesto_jalisco: "Jalisco" }, tipo: "line", unidadEje2: "mdp",
+    nacionalId: "presupuesto_nacional", jaliscoId: "presupuesto_jalisco",
   },
   quejas_ciudadanas: {
     primario: ["quejas_jalisco"], secundario: [],
     nombres: { quejas_jalisco: "Jalisco" }, tipo: "bar",
+    nacionalId: null, jaliscoId: "quejas_jalisco",
   },
   infraestructura: {
     primario: ["infra_comandancias", "infra_cuarteles", "infra_modulos"], secundario: ["infra_camaras"],
@@ -71,25 +92,31 @@ const SERIE_TEMPORAL_DEFS = {
     // rol Nacional/Jalisco. Sin este flag, insightSerie() calculaba un
     // "% del total nacional" sin sentido (cámaras-Jalisco / comandancias-Jalisco).
     comparaNacional: false,
+    nacionalId: null, jaliscoId: null,
   },
   armas_aseguradas: {
     primario: ["armas_jalisco"], secundario: [], nombres: { armas_jalisco: "Jalisco" }, tipo: "bar",
+    nacionalId: null, jaliscoId: "armas_jalisco",
   },
   boletas: {
     primario: ["boletas_infraccion__nacional"], secundario: ["boletas_infraccion__jalisco"],
     nombres: { boletas_infraccion__nacional: "Nacional", boletas_infraccion__jalisco: "Jalisco" }, tipo: "line",
+    nacionalId: "boletas_infraccion__nacional", jaliscoId: "boletas_infraccion__jalisco",
   },
   victimas_atendidas: {
     primario: ["victimas_total__nacional"], secundario: ["victimas_total__jalisco"],
     nombres: { victimas_total__nacional: "Nacional", victimas_total__jalisco: "Jalisco" }, tipo: "line",
+    nacionalId: "victimas_total__nacional", jaliscoId: "victimas_total__jalisco",
   },
   enfrentamientos: {
     primario: ["enfrentamientos_nacional"], secundario: ["enfrentamientos_jalisco"],
     nombres: { enfrentamientos_nacional: "Nacional", enfrentamientos_jalisco: "Jalisco" }, tipo: "line",
+    nacionalId: "enfrentamientos_nacional", jaliscoId: "enfrentamientos_jalisco",
   },
   empresas_seguridad_privada: {
     primario: ["empresas_nacional"], secundario: ["empresas_jalisco"],
     nombres: { empresas_nacional: "Nacional", empresas_jalisco: "Jalisco" }, tipo: "line",
+    nacionalId: "empresas_nacional", jaliscoId: "empresas_jalisco",
   },
 };
 
@@ -106,59 +133,92 @@ function buildSerieOption(def, series) {
   const seriesOpt = disponibles.map((id, i) => {
     const s = series[id];
     const esSecundario = def.secundario.includes(id);
+    const esBarra = def.tipo === "bar";
     return {
       name: def.nombres[id] || id,
-      type: def.tipo === "bar" ? "bar" : "line",
+      type: esBarra ? "bar" : "line",
       smooth: def.tipo === "line",
       yAxisIndex: esSecundario ? 1 : 0,
       color: PALETA_CATEGORICA[i % PALETA_CATEGORICA.length],
       data: ANIOS_CHART.map(a => s.valores[a] ?? null),
       connectNulls: false,
+      // Gráficas de barra (quejas_ciudadanas, armas_aseguradas): valor total
+      // visible arriba de cada barra, para no depender del hover.
+      label: esBarra
+        ? { show: true, position: "top", fontSize: 11, fontWeight: 700, color: "#1F2937", formatter: (p) => fmtN(p.value, s.unidad) }
+        : { show: false },
     };
   });
 
   return {
     tooltip: { trigger: "axis" },
     legend: { data: legend, bottom: 0, textStyle: { fontSize: 11 } },
-    grid: { top: 24, left: 8, right: ejeDoble ? 8 : 8, bottom: 40, containLabel: true },
+    grid: { top: 30, left: 8, right: ejeDoble ? 8 : 8, bottom: 40, containLabel: true },
     xAxis: { type: "category", data: ANIOS_CHART.map(String) },
     yAxis,
     series: seriesOpt,
   };
 }
 
-// Insight de texto: variación 2021->último año disponible de la primera
-// serie con datos, más el % que Jalisco representa del Nacional (si aplica).
-function insightSerie(def, series) {
-  const primeraConDato = [...def.primario, ...def.secundario].find(id => series[id]);
-  if (!primeraConDato) return "Sin datos suficientes para calcular una tendencia.";
-  const s = series[primeraConDato];
+// Insight de texto: una línea con la tendencia 2021->último año disponible
+// de Nacional, otra de Jalisco (cuando el grupo tiene ambos roles), más el %
+// que Jalisco representa del Nacional en el año más reciente compartido.
+// Usa fmtN(valor, unidad) para no redondear tasas/mdp a entero.
+function lineaTendencia(id, series, prefijo) {
+  const s = series[id];
+  if (!s) return null;
   const añosConDato = ANIOS_CHART.filter(a => s.valores[a] !== null);
+  if (!añosConDato.length) return null;
   if (añosConDato.length < 2) {
     const unico = añosConDato[0];
-    return unico ? `Único dato disponible: ${fmtN(s.valores[unico])} en ${unico}.` : "Sin datos suficientes.";
+    return `${prefijo}: único dato disponible ${fmtN(s.valores[unico], s.unidad)} en ${unico}.`;
   }
   const primero = añosConDato[0], ultimo = añosConDato[añosConDato.length - 1];
   const v0 = s.valores[primero], v1 = s.valores[ultimo];
   const variacion = v0 ? ((v1 - v0) / v0) * 100 : null;
   const dir = variacion === null ? "" : variacion > 0 ? "un incremento de" : variacion < 0 ? "una disminución de" : "sin variación —";
-  let texto = `${def.nombres[primeraConDato] || primeraConDato}: de ${fmtN(v0)} (${primero}) a ${fmtN(v1)} (${ultimo})` +
+  return `${prefijo}: de ${fmtN(v0, s.unidad)} (${primero}) a ${fmtN(v1, s.unidad)} (${ultimo})` +
     (variacion !== null ? `, ${dir} ${pct(Math.abs(variacion))}.` : ".");
+}
+
+function insightSerie(def, series) {
+  const partes = [];
+
+  if (def.nacionalId) {
+    const t = lineaTendencia(def.nacionalId, series, "Nacional");
+    if (t) partes.push(t);
+  }
+  if (def.jaliscoId) {
+    const t = lineaTendencia(def.jaliscoId, series, "Jalisco");
+    if (t) partes.push(t);
+  }
+  // Grupos sin roles Nacional/Jalisco explícitos (ej. infraestructura): usar
+  // la primera serie disponible del grupo, como antes.
+  if (!def.nacionalId && !def.jaliscoId) {
+    const primeraConDato = [...def.primario, ...def.secundario].find(id => series[id]);
+    if (primeraConDato) {
+      const t = lineaTendencia(primeraConDato, series, def.nombres[primeraConDato] || primeraConDato);
+      if (t) partes.push(t);
+    }
+  }
+
+  if (!partes.length) return "Sin datos suficientes para calcular una tendencia.";
 
   // Participación de Jalisco respecto al Nacional, solo si el grupo tiene
   // roles genuinamente distintos (Nacional vs. Jalisco). Grupos donde
   // primario/secundario solo separan escalas de graficación —todas sus
   // series son de Jalisco, ej. "infraestructura"— deben declararse con
   // `comparaNacional: false` para no calcular un % sin sentido.
-  const idNac = def.primario[0], idJal = def.secundario[0];
-  if (def.comparaNacional !== false && idNac && idJal && series[idNac] && series[idJal]) {
-    const añoRef = [...ANIOS_CHART].reverse().find(a => series[idNac].valores[a] !== null && series[idJal].valores[a] !== null);
+  if (def.comparaNacional !== false && def.nacionalId && def.jaliscoId && series[def.nacionalId] && series[def.jaliscoId]) {
+    const sNac = series[def.nacionalId], sJal = series[def.jaliscoId];
+    const añoRef = [...ANIOS_CHART].reverse().find(a => sNac.valores[a] !== null && sJal.valores[a] !== null);
     if (añoRef) {
-      const nac = series[idNac].valores[añoRef], jal = series[idJal].valores[añoRef];
-      if (nac) texto += ` En ${añoRef}, Jalisco representó ${pct((jal / nac) * 100)} del total nacional.`;
+      const nac = sNac.valores[añoRef], jal = sJal.valores[añoRef];
+      if (nac) partes.push(`En ${añoRef}, Jalisco representó ${pct((jal / nac) * 100)} del total nacional.`);
     }
   }
-  return texto;
+
+  return partes.join(" ");
 }
 
 /* -------------------------------------------------------------------------
@@ -282,6 +342,8 @@ function buildComposicionOption(def, series) {
     data: [0, 0],
     itemStyle: { color: "transparent" },
     silent: true,
+    clip: false,
+    z: 10,
     tooltip: { show: false },
     label: {
       show: true,
@@ -303,7 +365,11 @@ function buildComposicionOption(def, series) {
       },
     },
     legend: { data: etiquetasCat, bottom: 0, textStyle: { fontSize: 11 } },
-    grid: { top: 34, left: 8, right: 8, bottom: 40, containLabel: true },
+    // top:44 (antes 34) para dar más aire al label de total; en "Personal
+    // fallecido, según causa" el total de Nacional no se veía en el PDF —
+    // los datos y el % validan correctos (ver auditoría), así que el fix
+    // es de margen/recorte de renderizado, no de cálculo.
+    grid: { top: 44, left: 8, right: 8, bottom: 40, containLabel: true },
     xAxis: { type: "category", data: [`Nacional${añoNac ? " (" + añoNac + ")" : ""}`, `Jalisco${añoJal ? " (" + añoJal + ")" : ""}`] },
     yAxis: { type: "value", max: 100, axisLabel: { formatter: "{value}%" } },
     series: [...seriesOpt, totalSerie],

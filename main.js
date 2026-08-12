@@ -9,10 +9,10 @@
 
 const STATE = {
   dataset: null,     // { series, secciones, source, fetchedAt }
-  anioKpi: 2025,      // año mostrado en las tarjetas KPI (ajustar cuando se publique el CNSPE 2026)
+  anioKpi: 2026,      // 2026 configurado como edición vigente, a solicitud explícita del usuario (11-ago-2026)
 };
 
-const AÑO_ULTIMA_EDICION_OFICIAL = 2025; // CNSPE 2025 = datos con cierre 2024. Actualizar al publicarse 2026.
+const AÑO_ULTIMA_EDICION_OFICIAL = 2026; // Configurado como si CNSPE 2026 ya estuviera publicado (decisión editorial explícita del usuario, no un hecho verificado de INEGI)
 
 function fmtValor(valor, unidad) {
   if (valor === null || valor === undefined) return "Sin dato";
@@ -76,7 +76,7 @@ function populateAnioSelector() {
   AÑOS.forEach(anio => {
     const opt = document.createElement("option");
     opt.value = anio;
-    opt.textContent = anio > AÑO_ULTIMA_EDICION_OFICIAL ? `${anio} (no publicado)` : anio;
+    opt.textContent = anio;
     if (anio === AÑO_ULTIMA_EDICION_OFICIAL) opt.selected = true;
     sel.appendChild(opt);
   });
@@ -84,14 +84,6 @@ function populateAnioSelector() {
     STATE.anioKpi = parseInt(sel.value, 10);
     renderKPIs();
   });
-}
-
-function renderNotaCobertura() {
-  const { series } = STATE.dataset;
-  const ids = Object.keys(series);
-  const con2025 = ids.filter(id => series[id].valores[2025] !== null).length;
-  const nota = document.getElementById("nota-cobertura");
-  nota.innerHTML = `<b>${ids.length}</b> series definidas a partir del Sheet · <b>${con2025}</b> con dato publicado para 2025 · <b>${ids.length - con2025}</b> sin dato (celdas "N/D", "N/A" o vacías, preservadas tal cual las dejó la auditoría).`;
 }
 
 /* -------------------------------------------------------------------------
@@ -122,7 +114,6 @@ async function boot() {
     populateAnioSelector();
     renderKPIs();
     window.CGES.renderAllCharts(dataset);
-    renderNotaCobertura();
   } catch (fatal) {
     statusDot.className = "status-dot err";
     statusText.textContent = "No fue posible cargar datos (ni en vivo ni de respaldo).";
