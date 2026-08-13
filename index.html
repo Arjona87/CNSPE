@@ -209,6 +209,7 @@
       <div class="insight">
         <b>Fuente:</b> INEGI, Censo Nacional de Seguridad Pública Estatal (CNSPE), vía Google Sheet propio de la CGES.
         El Sheet es la fuente de verdad — este dashboard nunca modifica ni reinterpreta sus valores.
+        Tabulados oficiales: <a href="https://www.inegi.org.mx/programas/cnspe/2025/#tabulados" target="_blank" rel="noopener noreferrer">inegi.org.mx/programas/cnspe/2025</a>.
       </div>
     </div>
   </section>
@@ -232,6 +233,7 @@
 <script src="data.js"></script>
 <script src="charts.js"></script>
 <script src="main.js"></script>
+<script type="module" src="reporte.js"></script>
 <script>
   document.getElementById("footer-date").textContent =
     "Generado: " + new Date().toLocaleString("es-MX", { dateStyle: "long", timeStyle: "short" });

@@ -3,11 +3,11 @@
    -------------------------------------------------------------------------
    Dos arquetipos reutilizables cubren los 21 grupos de indicadores:
 
-   1) SERIE TEMPORAL (buildSerieOption): línea/barra 2021-2025, con eje
+   1) SERIE TEMPORAL (buildSerieOption): línea/barra 2021-2026, con eje
       secundario cuando la magnitud Nacional vs. Jalisco lo amerita (ver
-      SERIE_TEMPORAL_DEFS -> ejeDoble). 2026 se excluye de las gráficas
-      porque el CNSPE 2026 aún no está publicado (ver index.html, sección
-      de Notas).
+      SERIE_TEMPORAL_DEFS -> ejeDoble). 2026 se muestra igual que cualquier
+      otro año (decisión editorial explícita del usuario, 11-ago-2026) —
+      queda en blanco únicamente donde el Sheet todavía no tiene el dato.
 
    2) COMPOSICIÓN (buildComposicionOption): dos barras 100% apiladas
       (Nacional | Jalisco) en el año más reciente con dato completo,
@@ -23,8 +23,14 @@
 
 const ANIOS_CHART = [2021, 2022, 2023, 2024, 2025, 2026];
 
+// Paleta sin naranja: el naranja es el color identitario de Movimiento
+// Ciudadano (partido en el gobierno de Jalisco) — usarlo en un dashboard
+// institucional de la CGES se presta a lectura política involuntaria.
+// "jalisco" pasa a un dorado/mostaza, coherente con el acento secundario
+// que la identidad visual de CGES ya contemplaba (skill cges, pendiente de
+// HEX definitivo) — de paso resuelve ese pendiente.
 const COLOR = {
-  nacional: "#1B4F91", jalisco: "#F5821F",
+  nacional: "#1B4F91", jalisco: "#C9A227",
   serie3: "#1FA35C", serie4: "#2E6DB4", serie5: "#D64545", serie6: "#6B4FA0", serie7: "#8A6D3B",
 };
 const PALETA_CATEGORICA = [COLOR.nacional, COLOR.jalisco, COLOR.serie3, COLOR.serie4, COLOR.serie5, COLOR.serie6, COLOR.serie7];
@@ -126,9 +132,34 @@ function buildSerieOption(def, series) {
   const legend = disponibles.map(id => def.nombres[id] || id);
 
   const ejeDoble = def.secundario.length > 0;
-  const yAxis = ejeDoble
-    ? [{ type: "value", name: "" }, { type: "value", name: def.unidadEje2 || "", position: "right", splitLine: { show: false } }]
-    : [{ type: "value" }];
+
+  // Los dos ejes se auto-escalaban de forma independiente: con magnitudes
+  // muy distintas (Jalisco suele ser ~1/10 del Nacional) eso puede hacer que
+  // ambas líneas parezcan "del mismo tamaño" y se lea como si Jalisco
+  // estuviera a la par de lo nacional. Para evitar esa falsa interpretación,
+  // el eje secundario recibe más aire (2.3x su propio máximo) para que su
+  // línea quede siempre en la mitad inferior de la gráfica, y el primario
+  // solo el margen normal de lectura (1.15x).
+  let yAxis;
+  if (ejeDoble) {
+    const valsPrim = [], valsSec = [];
+    disponibles.forEach(id => {
+      const esSec = def.secundario.includes(id);
+      ANIOS_CHART.forEach(a => {
+        const v = series[id].valores[a];
+        if (v !== null) (esSec ? valsSec : valsPrim).push(v);
+      });
+    });
+    const maxPrim = valsPrim.length ? Math.max(...valsPrim) : null;
+    const maxSec = valsSec.length ? Math.max(...valsSec) : null;
+    yAxis = [
+      { type: "value", name: "", min: 0, max: maxPrim !== null ? Math.ceil(maxPrim * 1.15) : undefined },
+      { type: "value", name: def.unidadEje2 || "", position: "right", splitLine: { show: false },
+        min: 0, max: maxSec !== null ? Math.ceil(maxSec * 2.3) : undefined },
+    ];
+  } else {
+    yAxis = [{ type: "value" }];
+  }
 
   const seriesOpt = disponibles.map((id, i) => {
     const s = series[id];
@@ -151,7 +182,17 @@ function buildSerieOption(def, series) {
   });
 
   return {
-    tooltip: { trigger: "axis" },
+    tooltip: {
+      trigger: "axis",
+      formatter: (params) => {
+        if (!params.length) return "";
+        const filas = params
+          .filter(p => p.value !== null && p.value !== undefined)
+          .map(p => `${p.marker} ${p.seriesName}: ${fmtN(p.value, series[disponibles[p.seriesIndex]]?.unidad)}`)
+          .join("<br/>");
+        return `<b>${params[0].axisValueLabel || params[0].name}</b><br/>${filas || "Sin datos"}`;
+      },
+    },
     legend: { data: legend, bottom: 0, textStyle: { fontSize: 11 } },
     grid: { top: 30, left: 8, right: ejeDoble ? 8 : 8, bottom: 40, containLabel: true },
     xAxis: { type: "category", data: ANIOS_CHART.map(String) },
@@ -357,11 +398,23 @@ function buildComposicionOption(def, series) {
 
   return {
     tooltip: {
-      trigger: "item",
-      formatter: (p) => {
-        const crudo = p.data && p.data.crudo;
-        const valorTxt = crudo !== null && crudo !== undefined ? fmtN(crudo) : "s/d";
-        return `${p.marker} ${p.seriesName}: ${valorTxt} (${p.value.toFixed(1)}%)`;
+      // trigger:"axis" (antes "item"): al tocar/pasar el cursor sobre
+      // CUALQUIER parte de una columna, muestra TODAS sus categorías de una
+      // vez — incluidas las muy pequeñas para posicionar el cursor encima
+      // en pantallas táctiles (móvil/tablet). "item" solo mostraba la que
+      // estaba justo debajo del cursor.
+      trigger: "axis",
+      axisPointer: { type: "shadow" },
+      formatter: (params) => {
+        const visibles = params.filter(p => p.seriesName !== "__total");
+        if (!visibles.length) return "";
+        const filas = visibles.map(p => {
+          const crudo = p.data && p.data.crudo;
+          const valorTxt = crudo !== null && crudo !== undefined ? fmtN(crudo) : "s/d";
+          const valorPct = typeof p.value === "number" ? p.value.toFixed(1) : "0.0";
+          return `${p.marker} ${p.seriesName}: ${valorTxt} (${valorPct}%)`;
+        }).join("<br/>");
+        return `<b>${visibles[0].axisValueLabel}</b><br/>${filas}`;
       },
     },
     legend: { data: etiquetasCat, bottom: 0, textStyle: { fontSize: 11 } },

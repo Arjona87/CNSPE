@@ -1,5 +1,5 @@
 /* =========================================================================
-   ROBO DE VEHÍCULOS AMG — Dashboard CGES
+   PANORAMA INSTITUCIONAL — Dashboard CGES (CNSPE Jalisco vs. Nacional)
    Paleta institucional (Coordinación General Estratégica de Seguridad, Jalisco)
    ========================================================================= */
 
@@ -9,8 +9,14 @@
   --navy-soft:#1B3A6B;
   --blue:#1B4F91;
   --blue-light:#2E6DB4;
-  --orange:#F5821F;
-  --orange-dark:#E8792D;
+  /* Antes naranja (#F5821F): color identitario de Movimiento Ciudadano.
+     En un dashboard institucional de la CGES eso se presta a lectura
+     política involuntaria. Dorado/mostaza, coherente con la identidad
+     visual de CGES (acento secundario que la skill dejaba pendiente). El
+     nombre de la variable se conserva para no tocar ~15 referencias en
+     este archivo; lo que cambió es el color, no el rol que cumple. */
+  --orange:#C9A227;
+  --orange-dark:#B08F1F;
   --gray-bg:#F4F5F7;
   --gray-card:#E7E9EC;
   --gray-line:#D8DCE2;
@@ -41,6 +47,8 @@ body{
 }
 
 a{color:inherit;}
+.insight a{color:var(--blue); text-decoration:underline; text-underline-offset:2px;}
+.insight a:hover{color:var(--orange-dark);}
 img{max-width:100%;display:block;}
 
 .container{
@@ -68,7 +76,7 @@ img{max-width:100%;display:block;}
   display:inline-block;width:8px;height:8px;border-radius:50%;
   background:var(--green); margin-right:6px; box-shadow:0 0 0 3px rgba(31,163,92,.25);
 }
-.status-dot.warn{background:var(--orange); box-shadow:0 0 0 3px rgba(245,130,31,.25);}
+.status-dot.warn{background:var(--orange); box-shadow:0 0 0 3px rgba(201,162,39,.25);}
 .status-dot.err{background:var(--red); box-shadow:0 0 0 3px rgba(214,69,69,.25);}
 
 .plus-toggle{
